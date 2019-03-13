@@ -24,7 +24,7 @@ copydirs() {
 	directories=(.scripts .config/dunst \
 	.config/i3 .config/i3blocks \
 	.config/zathura .config/yay \
-	.config/ranger  \
+	.config/ranger  .vim \
 	.config/gtk-2.0 .config/gtk-3.0)
 
 	for dir in "${directories[@]}"; do
