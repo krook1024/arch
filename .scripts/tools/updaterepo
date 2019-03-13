@@ -3,42 +3,45 @@
 REPODIR="$HOME/Repos/arch"
 
 copyfiles() {
-	files=(~/.bashrc ~/.gitconfig ~/.profile ~/.vimrc \
-	~/.Xresources ~/.gitconfig ~/.bash_profile)
+	cd ~
+	files=(.bashrc .gitconfig .profile .vimrc \
+	.xinitrc \
+	.Xresources .gitconfig .bash_profile \
+	.config/bmdirs .config/bmfiles \
+	.config/compton.conf .config/aliasrc \
+	.config/wall.png)
 
 	for file in "${files[@]}"; do
-		echo "cp -f $file $REPODIR"
-		cp $file $REPODIR
+		cp -P --parents $file $REPODIR
 	done
 }
 
 copydirs() {
-	cp -rf ~/.scripts $REPODIR
+#	cp -rf ~/.scripts $REPODIR
 
-	directories=(~/.config/dunst \
-	~/.config/i3 ~/.config/i3blocks \
-	~/.config/zathura ~/.config/yay \
-	~/.config/ranger  \
-	~/.config/gtk-2.0 ~/.config/gtk-3.0)
+	cd ~
+	directories=(.scripts .config/dunst \
+	.config/i3 .config/i3blocks \
+	.config/zathura .config/yay \
+	.config/ranger  \
+	.config/gtk-2.0 .config/gtk-3.0)
 
 	for dir in "${directories[@]}"; do
-		echo "cp -rf $dir $REPODIR/.config/"
-		cp -r $dir $REPODIR
+		cp -r --parents $dir $REPODIR
 	done
 }
 
 gitupdate() {
+	cd $REPODIR
 	git add .
 	git commit -m "Update to dotfiles on $(date)"
 	git push
 }
 
 updaterepo() {
-	cd $REPODIR
 	copyfiles || echo "Failed to copy files."
 	copydirs || echo "Failed to copy directories."
-
-#	gitupdate
+	gitupdate || echo "Failed to upload changes to git."
 }
 
 updaterepo || echo "Faliora."
