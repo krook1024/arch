@@ -9,7 +9,7 @@ copyfiles() {
 	.Xresources .gitconfig .bash_profile \
 	.config/bmdirs .config/bmfiles \
 	.config/compton.conf .config/aliasrc \
-	.config/wall.png \
+	.config/wall.png .inputrc .tmux.conf \
 	.config/nvim/init.vim .config/nvim/autoload/plug.vim)
 
 	for file in "${files[@]}"; do
