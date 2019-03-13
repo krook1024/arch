@@ -1,0 +1,33 @@
+[Default Applications]
+x-scheme-handler/magnet=transmission-remote.desktop;
+x-scheme-handler/mailto=mutt.desktop;
+text/plain=vim.desktop;
+application/pdf=zathura.desktop;
+image/png=sxiv.desktop;
+image/jpeg=sxiv.desktop;
+image/gif=sxiv.desktop;
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/ftp=firefox.desktop
+x-scheme-handler/chrome=firefox.desktop
+text/html=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+
+[Added Associations]
+x-scheme-handler/http=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+x-scheme-handler/https=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+x-scheme-handler/ftp=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+x-scheme-handler/chrome=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+text/html=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+application/x-extension-htm=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+application/x-extension-html=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+application/x-extension-shtml=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+application/xhtml+xml=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+application/x-extension-xhtml=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+application/x-extension-xht=userapp-Waterfox-PANQXZ.desktop;firefox.desktop;
+audio/x-opus+ogg=mpv.desktop;

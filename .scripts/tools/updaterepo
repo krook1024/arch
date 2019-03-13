@@ -10,7 +10,8 @@ copyfiles() {
 	.config/bmdirs .config/bmfiles \
 	.config/compton.conf .config/aliasrc \
 	.config/wall.png .inputrc .tmux.conf \
-	.config/nvim/init.vim .config/nvim/autoload/plug.vim)
+	.config/nvim/init.vim .config/nvim/autoload/plug.vim \
+	.config/mimeapps.list )
 
 	for file in "${files[@]}"; do
 		cp -P --parents $file $REPODIR
