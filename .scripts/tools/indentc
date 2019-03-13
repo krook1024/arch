@@ -1,0 +1,5 @@
+#!/bin/sh
+# This script indents *.c files in the current directory.
+
+indent -linux -l70 *.c
+rm -f *~

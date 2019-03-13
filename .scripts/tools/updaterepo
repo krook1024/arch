@@ -1,0 +1,44 @@
+#!/bin/env bash
+
+REPODIR="$HOME/Repos/arch"
+
+copyfiles() {
+	files=(~/.bashrc ~/.gitconfig ~/.profile ~/.vimrc \
+	~/.Xresources ~/.gitconfig ~/.bash_profile)
+
+	for file in "${files[@]}"; do
+		echo "cp -f $file $REPODIR"
+		cp $file $REPODIR
+	done
+}
+
+copydirs() {
+	cp -rf ~/.scripts $REPODIR
+
+	directories=(~/.config/dunst \
+	~/.config/i3 ~/.config/i3blocks \
+	~/.config/zathura ~/.config/yay \
+	~/.config/ranger  \
+	~/.config/gtk-2.0 ~/.config/gtk-3.0)
+
+	for dir in "${directories[@]}"; do
+		echo "cp -rf $dir $REPODIR/.config/"
+		cp -r $dir $REPODIR
+	done
+}
+
+gitupdate() {
+	git add .
+	git commit -m "Update to dotfiles on $(date)"
+	git push
+}
+
+updaterepo() {
+	cd $REPODIR
+	copyfiles || echo "Failed to copy files."
+	copydirs || echo "Failed to copy directories."
+
+#	gitupdate
+}
+
+updaterepo || echo "Faliora."
