@@ -1,9 +1,6 @@
 ! st terminal settings
 st.alpha:255
-st.font: mono:pixelsize=13:antialias=true:autohint=true
-! terminal colours
-*foreground:#CCCCCC
-*background:#1B1D1E
+st.font:mono:pixelsize=13:antialias=true:autohint=true
 !black darkgray
 *color0:    #1B1D1E
 *color8:    #808080
@@ -27,4 +24,4 @@ st.font: mono:pixelsize=13:antialias=true:autohint=true
 *color14:   #66D9EF
 !gray white
 *color7:    #CCCCCC
-*color15: #F8F8F2
+*color15:	#F8F8F2
