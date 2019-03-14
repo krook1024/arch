@@ -3,6 +3,7 @@
 REPODIR="$HOME/Repos/arch"
 
 copyrepo() {
+	cd $REPODIR && git pull
 	echo "Copying files over to your home directory..."
 	cp -rfT "$REPODIR" "$1"
 	rm -rf "$HOME/.git" "$HOME/README.md"
