@@ -29,7 +29,8 @@ alias ka="killall" \
 	ind="indent -l70 -linux" \
 	update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg" \
 	pkgfiles="pacman -Qlq" \
-	rp="source ~/.profile"
+	rp="source ~/.profile" \
+	checkf="aspell -l=hu -H -c"
 
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
