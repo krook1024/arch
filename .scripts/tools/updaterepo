@@ -15,7 +15,7 @@ copyfiles() {
 	# X related
 	.xinitrc .Xresources \
 	# Shortcut files
-	.config/bmdirs .config/bmfiles \
+	.config/bmdirs .config/bmfiles .config/aliasrc \
 	# Compton config
 	.config/compton.conf  \
 	# Wallpaper
