@@ -10,6 +10,6 @@ sc	~/.scripts
 mn	/mnt
 u	~/Repos/Uni
 tb	~/Repos/textbook
-tbf	~/Repos/textbook/files
+tf	~/Repos/textbook/files
 sp	~/.startpage
 alkm ~/Repos/Uni/Alkmat/octave
