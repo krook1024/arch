@@ -33,7 +33,7 @@ copydirs() {
 	.config/gtk-3.0)
 
 	for dir in "${directories[@]}"; do
-		cp -r --parents $dir $REPODIR
+		cp -P -r --parents $dir $REPODIR
 	done
 }
 
