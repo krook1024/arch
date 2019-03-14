@@ -4,8 +4,12 @@ REPODIR="$HOME/Repos/arch"
 
 copyfiles() {
 	cd ~
-	files=(.bashrc .gitconfig .profile .vimrc \
-	.xinitrc \
+	files=(# Bash related
+	.bashrc .profile \
+	# Vim related
+	.vimrc .config/nvim/init.vim .config/nvim/autoload/plug.vim\
+
+	.xinitrc .gitconfig\
 	.Xresources .gitconfig .bash_profile \
 	.config/bmdirs .config/bmfiles \
 	.config/compton.conf .config/aliasrc \
@@ -19,8 +23,6 @@ copyfiles() {
 }
 
 copydirs() {
-#	cp -rf ~/.scripts $REPODIR
-
 	cd ~
 	directories=(.scripts \
 	.config/dunst \
