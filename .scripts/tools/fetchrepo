@@ -10,4 +10,4 @@ putgitrepo() { # Downlods a gitrepo $1 and places the files in $2 only overwriti
 }
 
 putgitrepo "https://github.com/krook1024/arch.git" "$HOME"
-rm -rf "$HOME/.git"
+rm -rf "$HOME/.git" "$HOME/README.md"
