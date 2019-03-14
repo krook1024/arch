@@ -23,7 +23,10 @@ copyfiles() {
 	# Git configuration
 	.gitconfig \
 	# Default applications
-	.config/mimeapps.list )
+	.config/mimeapps.list \
+	# Ranger configuration
+	.config/ranger/rc.conf .config/ranger/rifle.conf \
+	.config/ranger/shortcuts.conf)
 
 	for file in "${files[@]}"; do
 		cp -P --parents $file $REPODIR
@@ -38,7 +41,6 @@ copydirs() {
 	.config/i3 \
 	.config/i3blocks \
 	.config/zathura \
-	.config/ranger \
 	.vim \
 	.config/gtk-2.0
 	.config/gtk-3.0)
