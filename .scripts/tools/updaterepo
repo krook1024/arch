@@ -4,17 +4,22 @@ REPODIR="$HOME/Repos/arch"
 
 copyfiles() {
 	cd ~
-	files=(# Bash related
-	.bashrc .profile \
+	files=(\
+	# Bash related
+	.bashrc .profile .bash_profile .inputrc \
+	# Tmux
+	.tmux.conf \
 	# Vim related
-	.vimrc .config/nvim/init.vim .config/nvim/autoload/plug.vim\
-
-	.xinitrc .gitconfig\
-	.Xresources .gitconfig .bash_profile \
-	.config/bmdirs .config/bmfiles \
-	.config/compton.conf .config/aliasrc \
-	.config/wall.png .inputrc .tmux.conf \
-	.config/nvim/init.vim .config/nvim/autoload/plug.vim \
+	.vimrc .config/nvim/init.vim .config/nvim/autoload/plug.vim \
+	# X related
+	.xinitrc .Xresources \
+	# Shortcut files
+	.config/bmdirs .config/bmfiles .config/compton.conf  \
+	# Wallpaper
+	.config/wall.png  \
+	# Git configuration
+	.gitconfig \
+	# Default applications
 	.config/mimeapps.list )
 
 	for file in "${files[@]}"; do
