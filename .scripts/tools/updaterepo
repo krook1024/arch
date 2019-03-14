@@ -4,9 +4,10 @@ REPODIR="$HOME/Repos/arch"
 
 copyfiles() {
 	cd ~
+
 	files=(\
 	# Bash related
-	.bashrc .profile .bash_profile .inputrc \
+	.bashrc .bash_profile .zprofile .profile .inputrc \
 	# Tmux
 	.tmux.conf \
 	# Vim related
@@ -31,6 +32,7 @@ copyfiles() {
 
 copydirs() {
 	cd ~
+
 	directories=(.scripts \
 	.config/dunst \
 	.config/i3 \
