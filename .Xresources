@@ -1,6 +1,6 @@
 ! st terminal settings
 st.alpha:225
-st.font:mono:pixelsize=13:antialias=true:autohint=true
+st.font:mono:pixelsize=13:ntialias=true:autohint=true
 !black darkgray
 *color0:    #1B1D1E
 *color8:    #808080
