@@ -46,4 +46,4 @@ main() {
 			font cache!"
 }
 
-main || echo "Failed."
+main || echo "Failed." && exit 1
