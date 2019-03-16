@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+delete_current_config() { # Deletes the current configuration
+	sudo rm -rf /etc/fonts/conf.d/*
+}
+
+install_font_pkg() {
+	yay -S --noconfirm --needed noto-fonts noto-fonts-emoji \
+		noto-fonts-cjk ttf-symbola ttf-roboto ttf-dejavu \
+		>/dev/null 2>&1
+}
+
+install_new_config() {
+	needed_cfg=(10-hinting-slight.conf \
+		10-scale-bitmap-fonts.conf 10-sub-pixel-rgb.conf \
+		11-lcdfilter-default.conf \
+		30-metric-aliases.conf \
+		50-user.conf 60-generic.conf \
+		66-noto-sans.conf 66-noto-serif.conf \
+		90-synthetic.conf)
+
+	for i in "${needed_cfg[@]}"; do
+		sudo ln -s "/etc/fonts/conf.avail/$i" "/etc/fonts/conf.d/"
+	done
+}
+
+main() {
+	echo "Deleting current font configuration..."
+	delete_current_config || echo "Failed to delete \
+		current font configuration!"
+
+	echo "Installing font packages..."
+	install_font_pkg || echo "Failed to install \
+		font packages!"
+
+	echo "Installing new font configuration..."
+	install_new_config || echo "Failed to install \
+		new font configuration!"
+
+	echo "Refresing font cache..."
+		sudo fc-cache -fv >/dev/null 2>&1 || "Failed to refresh \
+			font cache!"
+}
+
+main || echo "Failed."
