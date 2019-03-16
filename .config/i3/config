@@ -106,6 +106,7 @@ bindsym $mod+p			exec --no-startup-id thunar
 bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 bindsym $mod+Shift+a	exec $term -e pulsemixer
 bindsym $mod+d			exec --no-startup-id dmenu_run
+bindsym $mod			exec --no-startup-id dmenu_run
 bindsym $mod+Shift+d	gaps inner current set 0; gaps outer current set 0
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+g	exec --no-startup-id gimp; workspace $ws5
