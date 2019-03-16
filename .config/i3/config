@@ -1,7 +1,5 @@
 # vim: filetype=i3
 
-# #---Basic Definitions---# #
-# Needed for i3-gaps
 for_window [class="^.*"] border pixel 1
 set $gapsinner 24
 set $gapsouter 12
@@ -15,8 +13,6 @@ set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
-# #---Dropdown Windows---# #
-
 # General dropdown window traits. The order can matter.
 for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
@@ -28,28 +24,12 @@ for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
-# #---Starting External Scripts---# #
-# Composite manager:
 exec --no-startup-id compton -b
-# clipboard manager
-##exec --no-startup-id clipmenud
-##exec --no-startup-id clipit
-# mpd startup
-##exec --no-startup-id mpd
-# nm applet
 exec --no-startup-id nm-applet
-# Setting the background:
 exec --no-startup-id setbg
-# Starts dunst for notifications:
 exec --no-startup-id dunst
-# Runs the key remapping scripts
 exec --no-startup-id remaps
-# Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
-# Run the script to update the mpd i3block on change.
-##exec_always --no-startup-id mpdupdate
-# Podboat automatic queue and download
-##exec_always --no-startup-id podentr
 
 bar {
 	font pango:mono 8
@@ -72,7 +52,6 @@ bar {
 	}
 }
 
-# #---Basic Bindings---# #
 bindsym $mod+c				exec --no-startup-id clipmenu -i
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
@@ -80,14 +59,11 @@ bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space			focus mode_toggle
 bindsym $mod+Escape			workspace prev
 bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
-# bindsym $mod+BackSpace
 bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Reboot computer?" "$reboot"
 bindsym $mod+0		exec --no-startup-id dmenuunicode
-##bindsym $mod+asciitilde
-# Show selection:
 bindsym $mod+Insert		exec --no-startup-id showclip
 bindsym $mod+Pause		exec --no-startup-id xcqr
-# #---Letter Key Bindings---# #
+
 bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+Shift+q	[con_id="__focused__" instance="^(?!dropdown_).*$"] kill
 bindsym $mod+w			exec $term -e nmtui
@@ -128,20 +104,14 @@ bindsym $mod+n			exec $term -e newsboat && pkill -RTMIN+6 i3blocks
 bindsym $mod+Shift+n	floating toggle; sticky toggle; exec --no-startup-id bottomright
 bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+m	exec --no-startup-id lmc mute
-# #---Workspace Bindings---# #
-bindsym $mod+Home		workspace $ws1
-bindsym $mod+Shift+Home		move container to workspace $ws1
-# bindsym $mod+End		workspace $ws10
-# bindsym $mod+Shift+End		move container to workspace $ws10
-bindsym $mod+Prior		workspace prev
-bindsym $mod+Shift+Prior	move container to workspace prev
-bindsym $mod+Next		workspace next
-bindsym $mod+Shift+Next		move container to workspace next
-bindsym $mod+Tab		workspace back_and_forth
-bindsym $mod+XF86Back		workspace prev
-bindsym $mod+Shift+XF86Back	move container to workspace prev
-bindsym $mod+XF86Forward	workspace next
-bindsym $mod+Shift+XF86Forward	move container to workspace next
+
+bindsym $mod+Home				workspace $ws1
+bindsym $mod+Shift+Home			move container to workspace $ws1
+bindsym $mod+Prior				workspace prev
+bindsym $mod+Shift+Prior		move container to workspace prev
+bindsym $mod+Next				workspace next
+bindsym $mod+Shift+Next			move container to workspace next
+bindsym $mod+Tab				workspace back_and_forth
 
 set $ws1 "1"
 set $ws2 "2"
@@ -154,7 +124,6 @@ set $ws8 "8"
 set $ws9 "9"
 # set $ws10 "10"
 
-# switch to workspace
 bindsym $mod+1		workspace $ws1
 bindsym $mod+2		workspace $ws2
 bindsym $mod+3		workspace $ws3
@@ -166,7 +135,6 @@ bindsym $mod+8		workspace $ws8
 bindsym $mod+9		workspace $ws9
 # bindsym $mod+0		workspace $ws10
 
-# move focused container to workspace
 bindsym $mod+Shift+1	move container to workspace $ws1
 bindsym $mod+Shift+2	move container to workspace $ws2
 bindsym $mod+Shift+3	move container to workspace $ws3
@@ -178,39 +146,32 @@ bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 # bindsym $mod+Shift+0	move container to workspace $ws10
 
-for_window [class="Pinentry"] sticky enable
-for_window [class="sent"] border pixel 0px
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
-for_window [window_role="GtkFileChooserDialog"] resize set 800 600
-for_window [window_role="GtkFileChooserDialog"] move position center
-for_window [title="Default - Wine desktop"] floating enable
+for_window [class="Pinentry"]						sticky enable
+for_window [class="sent"]							border pixel 0px
+for_window [title="GIMP Startup"]			 		move workspace $ws5
+for_window [class="Gimp"]							move workspace $ws5
+for_window [window_role="GtkFileChooserDialog"]		resize set 800 600
+for_window [window_role="GtkFileChooserDialog"]		move position center
+for_window [title="Default - Wine desktop"]			floating enable
 
-# #---Function Buttons---# #
-bindsym $mod+F1		exec --no-startup-id groff -kejpt -mom ~/.local/share/larbs/readme.mom -Tpdf | zathura -
 bindsym $mod+F2		restart
 bindsym $mod+F3		exec --no-startup-id displayselect
 bindsym $mod+F4		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
 bindsym $mod+F5		exec --no-startup-id $netrefresh
 bindsym $mod+F6		exec --no-startup-id torwrap
 bindsym $mod+F7		exec --no-startup-id td-toggle
-bindsym $mod+F8		exec --no-startup-id ~/.config/mutt/etc/mailsync.sh
 bindsym $mod+F9		exec --no-startup-id dmenumount
 bindsym $mod+F10	exec --no-startup-id dmenuumount
 
-# #---Arrow Keys---# #
-bindsym $mod+Left		focus left
-bindsym $mod+Down		focus down
-bindsym $mod+Up			focus up
-bindsym $mod+Right 		focus right
+bindsym $mod+Left			focus left
+bindsym $mod+Down			focus down
+bindsym $mod+Up				focus up
+bindsym $mod+Right 			focus right
 bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
 bindsym $mod+Shift+Right 	move right
 
-# #---Media Keys---# #
-
-# Volume keys
 bindsym $mod+plus			exec --no-startup-id lmc up 5
 bindsym $mod+Shift+plus		exec --no-startup-id lmc up 15
 bindsym $mod+minus 			exec --no-startup-id lmc down 5
@@ -220,21 +181,19 @@ bindsym $mod+Shift+less		exec --no-startup-id lmc replay
 bindsym $mod+greater		exec --no-startup-id lmc next
 bindsym $mod+Shift+greater	exec --no-startup-id lmc next
 
-# For advancing forward/backward in an mpd song
-bindsym $mod+bracketleft 	exec --no-startup-id lmc back 10
+bindsym $mod+bracketleft 		exec --no-startup-id lmc back 10
 bindsym $mod+Shift+bracketleft 	exec --no-startup-id lmc back 120
-bindsym $mod+bracketright 	exec --no-startup-id lmc forward 10
+bindsym $mod+bracketright 		exec --no-startup-id lmc forward 10
 bindsym $mod+Shift+bracketright exec --no-startup-id lmc forward 120
 
-# For screenshots and recording
 bindsym Print 				exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
 bindsym Shift+Print 		exec --no-startup-id maimpick
 bindsym $mod+Print			exec --no-startup-id dmenurecord
 bindsym $mod+Scroll_Lock	exec --no-startup-id "killall screenkey || screenkey"
 bindsym $mod+Delete			exec $stoprec
+
 bindsym XF86Launch1			exec --no-startup-id xset dpms force off
 
-# #---Extra XF86 Keys---# #
 bindsym XF86AudioMute					exec --no-startup-id lmc mute
 bindsym XF86AudioLowerVolume			exec --no-startup-id lmc down 5
 bindsym Shift+XF86AudioLowerVolume		exec --no-startup-id lmc down 10
@@ -250,5 +209,5 @@ bindsym XF86TouchpadOff					exec --no-startup-id synclient TouchpadOff=1
 bindsym XF86Suspend						exec --no-startup-id lockscreen
 bindsym XF86MonBrightnessDown			exec --no-startup-id xbacklight -dec 15
 bindsym XF86MonBrightnessUp				exec --no-startup-id xbacklight -inc 15
-bindsym XF86Display		exec --no-startup-id displayselect
-bindsym XF86WLAN		exec $netrefresh
+bindsym XF86Display						exec --no-startup-id displayselect
+bindsym XF86WLAN						exec $netrefresh
