@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 delete_current_config() { # Deletes the current configuration
-	sudo rm -rf /etc/fonts/conf.d/*
+	echo -n "Remove old font configuration (y/n)?"
+	read answer
+	if [ "$answer" != "${answer#[Yy]}" ] ;then
+		sudo rm -rf /etc/fonts/conf.d/*
+	fi
 }
 
 install_font_pkg() {
