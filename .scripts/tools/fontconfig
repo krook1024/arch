@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 delete_current_config() { # Deletes the current configuration
-	echo -n "Remove old font configuration (y/n)?"
+	echo -n "Remove old font configuration (y/n)? "
 	read answer
 	if [ "$answer" != "${answer#[Yy]}" ] ;then
 		sudo rm -rf /etc/fonts/conf.d/*
