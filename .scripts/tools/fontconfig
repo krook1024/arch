@@ -8,13 +8,13 @@ delete_current_config() { # Deletes the current configuration
 	fi
 }
 
-install_font_pkg() {
+install_font_pkg() { # Installs needed packages
 	yay -S --noconfirm --needed noto-fonts noto-fonts-emoji \
 		noto-fonts-cjk ttf-symbola ttf-roboto ttf-dejavu \
 		>/dev/null 2>&1
 }
 
-install_new_config() {
+install_new_config() { # Symlinks configuration files to /etc/fonts/conf.d
 	needed_cfg=(10-hinting-slight.conf \
 		10-scale-bitmap-fonts.conf 10-sub-pixel-rgb.conf \
 		11-lcdfilter-default.conf \
