@@ -30,8 +30,8 @@ for_window [instance="dropdown_*"] move position center
 # Composite manager:
 exec --no-startup-id compton -b
 # clipboard manager
-exec --no-startup-id clipmenud
-exec --no-startup-id clipit
+# exec --no-startup-id clipmenud
+# exec --no-startup-id clipit
 # mpd startup
 exec --no-startup-id mpd
 # nm applet
