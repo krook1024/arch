@@ -32,10 +32,10 @@ for_window [instance="dropdown_*"] move position center
 # Composite manager:
 exec --no-startup-id compton -b
 # clipboard manager
-# exec --no-startup-id clipmenud
-# exec --no-startup-id clipit
+##exec --no-startup-id clipmenud
+##exec --no-startup-id clipit
 # mpd startup
-exec --no-startup-id mpd
+##exec --no-startup-id mpd
 # nm applet
 exec --no-startup-id nm-applet
 # Setting the background:
@@ -47,9 +47,9 @@ exec --no-startup-id remaps
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 # Run the script to update the mpd i3block on change.
-exec_always --no-startup-id mpdupdate
+##exec_always --no-startup-id mpdupdate
 # Podboat automatic queue and download
-exec_always --no-startup-id podentr
+##exec_always --no-startup-id podentr
 
 bar {
 	font pango:mono 8
