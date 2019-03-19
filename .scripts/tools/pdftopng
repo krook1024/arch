@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+NAME=$1
+NAME_PNG=${NAME/.pdf/.png}
+
+pdf_to_png() {
+	convert -density 150 $NAME +profile "" $NAME_PNG >/dev/null 2>&1
+	convert -trim $NAME_PNG $NAME_PNG >/dev/null 2>&1
+}
+
+echo "Converting $NAME -> $NAME_PNG..."
+pdf_to_png || "Conversion failed."
