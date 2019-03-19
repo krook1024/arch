@@ -106,7 +106,7 @@ set clipboard=unnamedplus
 	autocmd BufWritePost config.h,config.mk !sudo make install
 
 " Recompile docbook documents
-	autocmd BufWritePost *.xml,*.xsl !make
+"	autocmd BufWritePost *.xml,*.xsl !make
 
 " Navigating with guides
 	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
