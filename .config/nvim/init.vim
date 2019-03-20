@@ -227,6 +227,8 @@ set clipboard=unnamedplus
 
 """ docbook
 	autocmd FileType docbk inoremap ,a <link xlink:href="<++>"><++></link><++><Esc>F"ci"
-	autocmd FileType docbk inoremap ,p <para><Enter>+<Enter></para><Esc>kA
+	autocmd FileType docbk inoremap ,p <para><Enter>+<Enter></para><Esc>kxA
+	autocmd FileType docbk inoremap ,b <emphasis role="strong"></emphasis><Esc>10hi
+	autocmd FileType docbk inoremap ,i <emphasis></emphasis><Esc>10hi
 	autocmd FileType docbk inoremap ,cd <![CDATA[]]><Esc>2hi
 
