@@ -95,6 +95,15 @@ set clipboard=unnamedplus
 	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo \| set bg=light
 
 " Automatically deletes all trailing whitespace on save.
+	fun! StripTrailingWhitespace()
+		" Don't strip on these filetypes
+		if &ft =~ 'md\|rmd'
+			return
+		endif
+		%s/\s\+$//e
+	endfun
+
+	autocmd BufWritePre * call StripTrailingWhitespace()
 "	autocmd BufWritePre * %s/\s\+$//e
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
