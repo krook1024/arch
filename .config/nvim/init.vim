@@ -11,6 +11,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tomasr/molokai'
+Plug 'justmao945/vim-clang'
 call plug#end()
 
 let g:rehash256 = 1
