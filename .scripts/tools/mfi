@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# M(ozilla) F(irefox)I (ncofnito)
+# Opens up a page in incognito mode in Mozilla Firefox
+
+firefox --private-window $*
