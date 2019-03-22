@@ -32,7 +32,8 @@ alias ka="killall" \
 	rp="source ~/.profile" \
 	checkf="aspell -l hu -H -c" \
 	updatemirrors="p -S --noconfirm pacman-mirrorlist" \
-	n="setsid samedir"
+	n="setsid samedir" \
+	bt="bluetoothctl"
 
 command -v nvim >/dev/null &&
 	alias vim="nvim" vimdiff="nvim -d"
