@@ -25,7 +25,6 @@ alias ka="killall" \
 	lsp="pacman -Qett --color=always | less" \
 	ffmpeg="ffmpeg -hide_banner" \
 	r="ranger" \
-	nf="neofetch | lolcat" \
 	ind="indent -l70 -linux" \
 	update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg" \
 	pkgfiles="pacman -Qlq" \
@@ -34,7 +33,7 @@ alias ka="killall" \
 	updatemirrors="p -S --noconfirm pacman-mirrorlist" \
 	n="setsid samedir" \
 	bt="bluetoothctl" \
-	nf="neofetch --disable gpu resolution icons theme"
+	nf='neofetch --disable gpu resolution icons theme  --ascii "$(fortune | cowsay -W 30 | lolcat)" | lolcat'
 
 command -v nvim >/dev/null &&
 	alias vim="nvim" vimdiff="nvim -d"
