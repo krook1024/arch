@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Open URL in incognito mode 😌
+
+url=$(echo "🌍" | dmenu -i)
+
+[ "$url" != "" ] || exit
+
+setsid $BROWSER --private-window $url

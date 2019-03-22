@@ -80,7 +80,7 @@ bindsym $mod+i 			exec $term -e htop
 bindsym $mod+Shift+i	exec --no-startup-id i3resize up
 bindsym $mod+o			sticky toggle
 bindsym $mod+Shift+o	exec --no-startup-id i3resize right
-bindsym $mod+p			exec --no-startup-id thunar
+bindsym $mod+p			exec --no-startup-id dmenuincognito
 bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 bindsym $mod+Shift+a	exec $term -e pulsemixer
 bindsym $mod+d			exec --no-startup-id dmenu_run
