@@ -31,7 +31,8 @@ alias ka="killall" \
 	pkgfiles="pacman -Qlq" \
 	rp="source ~/.profile" \
 	checkf="aspell -l hu -H -c" \
-	updatemirrors="p -S --noconfirm pacman-mirrorlist"
+	updatemirrors="p -S --noconfirm pacman-mirrorlist" \
+	n="setsid samedir"
 
 command -v nvim >/dev/null &&
 	alias vim="nvim" vimdiff="nvim -d"
