@@ -1,5 +1,7 @@
 # 🆒 arch
 
+![](screenshot.png)
+
 These are my dotfiles I use on Arch Linux. Best to use
 after a LARBS installation.
 
