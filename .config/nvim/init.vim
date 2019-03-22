@@ -28,6 +28,7 @@ set clipboard=unnamedplus
 	set number relativenumber
 	set shiftwidth=4
 	set tabstop=4
+	nnoremap <Space> @q
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
