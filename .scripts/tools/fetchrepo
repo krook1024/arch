@@ -7,7 +7,7 @@ copyrepo() {
 	cd $REPODIR && git pull
 	echo "Copying dotfiles over to your home directory..."
 	cp -rfT "$REPODIR" "$1"
-	rm -rf "$HOME/.git" "$HOME/README.md"
+	rm -rf "$HOME/.git" "$HOME/README.md" "$HOME/screenshot.png"
 }
 
 copyrepo "$HOME"
