@@ -104,7 +104,7 @@ set clipboard=unnamedplus
 " Automatically deletes all trailing whitespace on save.
 	fun! StripTrailingWhitespace()
 		" Don't strip on these filetypes
-		if &ft =~ 'md\|rmd'
+		if &ft =~ 'md\|rmd\|vimwiki\|markdown\|rmarkdown'
 			return
 		endif
 		%s/\s\+$//e
