@@ -12,6 +12,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tomasr/molokai'
 Plug 'justmao945/vim-clang'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 let g:rehash256 = 1
@@ -33,6 +34,11 @@ set clipboard=unnamedplus
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Emmet settings
+"	let g:user_emmet_leader_key='<C-Z>'
+	let g:user_emmet_install_global = 0
+	autocmd FileType html,css EmmetInstall
 
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
