@@ -19,6 +19,7 @@ let g:rehash256 = 1
 color molokai
 set bg=dark
 set mouse=a
+set go=a
 set nohlsearch
 set clipboard=unnamedplus
 " Some basics:
@@ -30,6 +31,7 @@ set clipboard=unnamedplus
 	set shiftwidth=4
 	set tabstop=4
 	nnoremap <Space> @q
+	nnoremap c "_c
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
