@@ -8,6 +8,7 @@ copyrepo() {
 	echo "Copying dotfiles over to your home directory..."
 	cp -rfT "$REPODIR" "$1"
 	rm -rf "$HOME/.git" "$HOME/README.md" "$HOME/screenshot.png"
+	shortcuts >/dev/null 2>&1
 }
 
 copyrepo "$HOME"
