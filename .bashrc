@@ -6,3 +6,6 @@ export PS1="\[\e[34m\]\W\[\e[m\] \[\e[32m\]➜\[\e[m\] "
 
 # added by travis gem
 [ -f /home/b1/.travis/travis.sh ] && source /home/b1/.travis/travis.sh
+
+# java
+export JAVA_HOME=/java
