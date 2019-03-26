@@ -5,6 +5,7 @@ delete_current_config() { # Deletes the current configuration
 	read answer
 	if [ "$answer" != "${answer#[Yy]}" ] ;then
 		sudo rm -rf /etc/fonts/conf.d/*
+		sudo rm -rf /usr/share/fonts/TTF/Hack*.ttf
 	fi
 }
 
@@ -27,12 +28,16 @@ install_hack() { # We get Hack Nerd Font directly from GitHub cause why not?
 	"https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Italic/complete/Hack%20Italic%20Nerd%20Font%20Complete.ttf" \
 	"https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf")
 
-	# dir=(sudo mktemp -d)
-
+	dir=$(mktemp -d); (:;:)
+	echo "Installing Hack Nerd Font..."
 	for i in "${hack_fonts[@]}"; do
-		cd /usr/share/fonts/TTF
-		sudo curl -LO $i
+		# echo "Downloading $i..."
+		cd $dir
+		sudo curl -LO $i >/dev/null 2>&1
 	done
+
+	sudo cp -r $dir/* /usr/share/fonts/TTF && (:;:)
+	sudo rm -rf $dir
 }
 
 install_new_config() { # Symlinks configuration files to /etc/fonts/conf.d
