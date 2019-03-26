@@ -16,7 +16,7 @@ Plug 'mattn/emmet-vim'
 call plug#end()
 
 let g:rehash256 = 1
-color molokai
+" color molokai
 set bg=dark
 set mouse=a
 set go=a
