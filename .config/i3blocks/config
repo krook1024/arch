@@ -1,30 +1,6 @@
 command=~/.scripts/statusbar/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=25
 markup=pango
-
-[record]
-command=cat /tmp/recordingicon
-interval=once
-signal=9
-
-[music]
-label=🎼
-interval=once
-signal=11
-
-[news]
-label=📰
-interval=once
-signal=6
-
-[pacpackages]
-label=📦
-interval=once
-signal=8
-
-[torrent]
-interval=20
-signal=7
 
 [weather]
 interval=3600
@@ -32,11 +8,11 @@ signal=5
 
 [memory]
 interval=30
-label=🧠
+label=
 
 [cpu]
 interval=15
-label=💻
+label=
 
 [volume]
 interval=once
@@ -45,13 +21,14 @@ signal=10
 [disk]
 interval=60
 command=disk /
+label=
 
 [battery]
 command=battery BAT0
 interval=5
 
 [clock]
-label=📅
+label=
 interval=30
 
 [internet]

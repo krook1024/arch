@@ -43,3 +43,4 @@ se() { du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDIT
 sv() { vcopy "$(du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf)" ;}
 vf() { fzf | xargs -r -I % $EDITOR % ;}
 quickgit() { git add . ; git commit -m "$*" ; git push ;}
+printunicode() { printf "\u$1\n" ; }
