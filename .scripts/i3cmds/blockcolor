@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-colors="no"
+# Set to "no" to disable colors (everything will be in white instead)
+colors="yes"
 [[ $colors == "no" ]] && { printf "<span color=\"#FFFFFF\">"; exit 0; }
 unset colors
 
