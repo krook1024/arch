@@ -3,12 +3,10 @@
 
 case $BLOCK_BUTTON in
     3) pgrep -x dunst >/dev/null && notify-send "<b>🔋 Battery module:</b>
-🔋: discharging
-🛑: not charging
-♻: stagnant charge
-🔌: charging
-⚡: charged
-❗: battery very low!
+: stagnant charge
+: charging
+: charged
+ : battery very low!
 - Text color reflects charge left" ;;
 esac
 
@@ -28,7 +26,7 @@ elif [ "$capacity" -ge 25 ]; then
 else
 	color="#ff0000"
 	batteryicon=""
-	warn="❗"
+	warn=""
 fi
 
 [ -z $warn ] && warn=" "
