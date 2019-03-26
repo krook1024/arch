@@ -9,4 +9,10 @@ $(ps axch -o cmd:15,%cpu --sort=-%cpu | head)" ;;
 - % is of single core." ;;
 esac
 
-sensors | awk '/Core 0/ {print $3}'
+result=$(sensors | awk '/Core 0/ {print $3}' | tr -d '\n')
+
+[[ $result == "" ]] && exit
+
+printf "$(blockcolor 7)"
+printf "$result"
+printf "</span>"

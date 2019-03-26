@@ -23,4 +23,7 @@ else
 	icon=""
 fi
 
-printf "%s %s%%\\n" "$icon" "$vol"
+printf "$(blockcolor 9)"
+printf "%s %s%%\\n" "$icon" "$vol" | tr -d '\n'
+printf "</span>"
+

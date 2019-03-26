@@ -5,35 +5,27 @@ markup=pango
 [weather]
 interval=3600
 signal=5
-color=#FF0000
 
 [memory]
 interval=30
-label=
-color=#00FF00
 
 [cpu]
 interval=15
 label=
-color=#0000FF
 
 [volume]
 interval=once
 signal=10
-color=#FF00FF
 
 [disk]
 interval=60
 command=disk /
-label=
-color=#00FFFF
 
 [battery]
 command=battery BAT0
 interval=5
 
 [clock]
-label=
 interval=30
 
 [internet]

@@ -8,4 +8,6 @@ $(ps axch -o cmd:15,%mem --sort=-%mem | head)" ;;
 - Click to show memory hogs." ;;
 esac
 
-free -h | awk '/^Mem:/ {print $3 "/" $2}'
+printf "$(blockcolor 6)  "
+free -h | awk '/^Mem:/ {print $3 "/" $2}' | tr -d '\n'
+printf "</span>"
