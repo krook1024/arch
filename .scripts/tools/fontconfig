@@ -12,6 +12,27 @@ install_font_pkg() { # Installs needed packages
 	yay -S --noconfirm --needed noto-fonts noto-fonts-emoji \
 		noto-fonts-cjk ttf-symbola ttf-roboto ttf-dejavu \
 		>/dev/null 2>&1
+
+	install_hack
+}
+
+install_hack() { # We get Hack Nerd Font directly from GitHub cause why not?
+	# https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete.ttf
+	# https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/BoldItalic/complete/Hack%20Bold%20Italic%20Nerd%20Font%20Complete.ttf
+	# https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Italic/complete/Hack%20Italic%20Nerd%20Font%20Complete.ttf
+	# https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf
+
+	hack_fonts=("https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete.ttf" \
+	"https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/BoldItalic/complete/Hack%20Bold%20Italic%20Nerd%20Font%20Complete.ttf" \
+	"https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Italic/complete/Hack%20Italic%20Nerd%20Font%20Complete.ttf" \
+	"https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf")
+
+	# dir=(sudo mktemp -d)
+
+	for i in "${hack_fonts[@]}"; do
+		cd /usr/share/fonts/TTF
+		sudo curl -LO $i
+	done
 }
 
 install_new_config() { # Symlinks configuration files to /etc/fonts/conf.d
