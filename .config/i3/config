@@ -1,6 +1,6 @@
 # vim: filetype=i3
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 set $gapsinner 24
 set $gapsouter 12
 gaps inner $gapsinner
@@ -21,8 +21,8 @@ for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
 for_window [instance="dropdown_tmuxdd"] resize set 625 450
 for_window [instance="dropdown_dropdowncalc"] resize set 800 300
-for_window [instance="dropdown_tmuxdd"] border pixel 3
-for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_tmuxdd"] border pixel 0
+for_window [instance="dropdown_dropdowncalc"] border pixel 0
 for_window [instance="dropdown_*"] move position center
 
 exec --no-startup-id compton -b
