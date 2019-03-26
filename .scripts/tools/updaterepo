@@ -28,7 +28,9 @@ copyfiles() {
 	.config/mimeapps.list \
 	# Ranger configuration
 	.config/ranger/rc.conf .config/ranger/rifle.conf \
-	.config/ranger/shortcuts.conf)
+	.config/ranger/shortcuts.conf \
+	# Unix ascii art
+	.scripts/unix)
 
 	for file in "${files[@]}"; do
 		cp -P --parents $file $REPODIR
@@ -38,7 +40,7 @@ copyfiles() {
 copydirs() {
 	cd ~
 
-	directories=(.scripts \
+	directories=(.scripts/i3cmds .scripts/statusbal .scripts/tools \
 	.config/dunst \
 	.config/i3 \
 	.config/i3blocks \
