@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 
+colors="no"
+[[ $colors == "no" ]] && { printf "<span color=\"#FFFFFF\">"; exit 0; }
+unset colors
+
 color=$(xrdb -query | grep "*color$1:" | awk '{print $NF}')
 [[ $color == "" ]] && printf "<span color=\"#FFFFFF\">" || printf "<span color=\"$color\">"
