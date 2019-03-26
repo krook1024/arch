@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
+# This script is responsible for coloring i3blocks' output.
+# By default it returns colors from xrdb accordingly to the output.
+# Usage: blockcolor [number]
 
 # Set to "no" to disable colors (everything will be in white instead)
 colors="yes"
