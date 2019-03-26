@@ -20,13 +20,13 @@ if [ "$capacity" -ge 75 ]; then
 elif [ "$capacity" -ge 50 ]; then
 	color="#ffffff"
 	batteryicon=""
-elif [ "$capacity" -ge 25 ]; then
+elif [ "$capacity" -ge 15 ]; then
 	color="#ffff00"
 	batteryicon=""
 else
 	color="#ff0000"
 	batteryicon=""
-	warn=""
+	warn="  "
 fi
 
 [ -z $warn ] && warn=" "
