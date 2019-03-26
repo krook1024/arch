@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+color=$(xrdb -query | grep "*color$1:" | awk '{print $NF}')
+[[ $color == "" ]] && printf "#FFFFFF" || printf "$color"
