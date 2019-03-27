@@ -11,7 +11,6 @@ interval=30
 
 [cpu]
 interval=15
-label=
 
 [volume]
 interval=once

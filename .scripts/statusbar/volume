@@ -11,7 +11,10 @@ case $BLOCK_BUTTON in
 - Scroll to change."
 esac
 
-[ "$(pulsemixer --get-mute)" = "1" ] && printf "🔇\\n" && exit
+
+printf "$(blockcolor 9)"
+
+[ "$(pulsemixer --get-mute)" = "1" ] && printf "</span>" && exit
 
 vol=$(pulsemixer --get-volume | awk '{print $1}')
 
@@ -23,7 +26,6 @@ else
 	icon=""
 fi
 
-printf "$(blockcolor 9)"
 printf "%s %s%%\\n" "$icon" "$vol" | tr -d '\n'
 printf "</span>"
 

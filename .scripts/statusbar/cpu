@@ -13,6 +13,6 @@ result=$(sensors | awk '/Core 0/ {print $3}' | tr -d '\n')
 
 [[ $result == "" ]] && exit
 
-printf "$(blockcolor 7)"
-printf "$result"
+printf "$(blockcolor 10)"
+printf " $result"
 printf "</span>"
