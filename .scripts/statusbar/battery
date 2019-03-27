@@ -10,27 +10,30 @@ case $BLOCK_BUTTON in
 - Text color reflects charge left" ;;
 esac
 
+color=$(blockcolors 2)
+
 capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
 status=$(cat /sys/class/power_supply/"$1"/status)
 batteryicon=""
 
 if [ "$capacity" -ge 75 ]; then
-	color="#00ff00"
+	# color="#00ff00"
 	batteryicon=""
 elif [ "$capacity" -ge 50 ]; then
-	color="#ffffff"
+	# color="#ffffff"
 	batteryicon=""
 elif [ "$capacity" -ge 15 ]; then
-	color="#ffff00"
+	# color="#ffff00"
 	batteryicon=""
 else
-	color="#ff0000"
+	# color="#ff0000"
 	batteryicon=""
 	warn="  "
 fi
 
 [ -z $warn ] && warn=" "
 
-[ "$status" = "Charging" ] && color="#ffffff"
+# [ "$status" = "Charging" ] && color="#ffffff"
+
 
 printf "<span color='%s'>%s%s%s</span>" "$color" "$(echo "$status" | sed -e "s/,//;s/Discharging/$batteryicon/;s/Not Charging/$batteryicon/;s/Charging//;s/Unknown//;s/Full//;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
