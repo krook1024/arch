@@ -26,7 +26,7 @@ for_window [instance="dropdown_dropdowncalc"] border pixel 0
 for_window [instance="dropdown_*"] move position center
 
 exec --no-startup-id compton -b
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 exec --no-startup-id setbg
 exec --no-startup-id dunst
 exec --no-startup-id remaps
