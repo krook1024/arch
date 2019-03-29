@@ -16,8 +16,7 @@ Plug 'mattn/emmet-vim'
 call plug#end()
 
 let g:rehash256 = 1
-" color molokai
-set bg=dark
+" color molokai set bg=dark
 set mouse=a
 set go=a
 set nohlsearch
@@ -113,7 +112,9 @@ set clipboard=unnamedplus
 	endfun
 
 	autocmd BufWritePre * call StripTrailingWhitespace()
-"	autocmd BufWritePre * %s/\s\+$//e
+
+" delete blank lines in docbook
+	autocmd BufWritePre *.xml %g/^$/d
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost ~/.config/bmdirs,~/.config/bmfiles !shortcuts
