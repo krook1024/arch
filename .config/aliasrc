@@ -18,7 +18,7 @@ alias ka="killall" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
 	yt="youtube-dl --add-metadata -i -o '%(title)s.%(ext)s'" \
-	yta="yt -x -f bestaudio/best" \
+	yta="yt -x -f bestaudio/best --audio-format mp3" \
 	YT="youtube-viewer" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	upc="sudo pacman -Syu; pkill -RTMIN+8 i3blocks" \
