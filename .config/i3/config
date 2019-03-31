@@ -31,6 +31,7 @@ exec --no-startup-id setbg
 exec --no-startup-id dunst
 exec --no-startup-id remaps
 exec --no-startup-id unclutter
+exec --no-startup-id mpd
 
 bar {
 	font pango:mono 8
