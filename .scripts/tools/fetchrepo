@@ -17,6 +17,7 @@ copyrepo() {
 	shortcuts >/dev/null 2>&1
 	setbg >/dev/null 2>&1
 	i3 restart >/dev/null 2>&1
+	creload >/dev/null 2>&1
 }
 
 copyrepo "$HOME"

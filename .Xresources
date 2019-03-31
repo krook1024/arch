@@ -1,6 +1,6 @@
 ! Terminal settings
 st.alpha:225
-st.font:FuraCode Nerd Font:pixelsize=14:antialias=true:autohint=true
+st.font:mono:pixelsize=14:antialias=true:autohint=true
 
 
 *color0:  #282828
