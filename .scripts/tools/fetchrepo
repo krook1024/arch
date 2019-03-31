@@ -3,13 +3,20 @@
 REPODIR="$HOME/Repos/arch"
 
 copyrepo() {
+	# Download the fresh repo to the desired directory and
+	# later copy the files over to ~.
 	echo "Updating dotfiles repo from github..."
 	cd $REPODIR && git pull
 	echo "Copying dotfiles over to your home directory..."
 	cp -rfT "$REPODIR" "$1"
 	rm -rf "$HOME/.git" "$HOME/README.md" "$HOME/screenshot.png"
+
+	# Refresh Xresources, shortcuts, wallpaper
+	# and finally restart i3.
+	xrdb ~/.Xresources >/dev/null 2>&1
 	shortcuts >/dev/null 2>&1
 	setbg >/dev/null 2>&1
+	i3 restart >/dev/null 2>&1
 }
 
 copyrepo "$HOME"
