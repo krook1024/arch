@@ -1,7 +1,7 @@
 #!/bin/sh
 
-printf "$(blockcolor 13)  "
-date '+%H:%M' | tr -d '\n'
+printf "$(blockcolor 13)  "
+date '+%Y %b %d (%a)' | tr -d '\n'
 printf "</span>"
 
 case $BLOCK_BUTTON in

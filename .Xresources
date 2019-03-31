@@ -1,21 +1,26 @@
-! Molokai colorscheme
-*color0:    #1B1D1E
-*color1:    #FF0044
-*color2:    #82B414
-*color3:    #FD971F
-*color4:    #266C98
-*color5:    #AC0CB1
-*color6:    #AE81FF
-*color7:    #CCCCCC
-*color8:    #808080
-*color9:    #F92672
-*color10:   #A6E22E
-*color11:   #7070F0
-*color12:   #7070F0
-*color13:   #D63AE1
-*color14:   #66D9EF
-*color15:   #F8F8F2
-
 ! Terminal settings
 st.alpha:225
 st.font:monaco:pixelsize=13:antialias=true:autohint=true
+
+
+*color0:  #282828
+*color10: #b8bb26
+*color11: #fabd2f
+*color12: #83a598
+*color13: #d3869b
+*color14: #8ec07c
+*color15: #ebdbb2
+*color1:  #cc241d
+*color2:  #98971a
+*color3:  #d79921
+*color4:  #458588
+*color5:  #b16286
+*color6:  #689d6a
+*color7:  #a89984
+*color8:  #928374
+*color9:  #fb4934
+
+*background: #282828
+*foreground: #ebdbb2
+! hard contrast: *background: #1d2021
+! soft contrast: *background: #32302f

@@ -13,10 +13,12 @@ Plug 'tpope/vim-commentary'
 Plug 'tomasr/molokai'
 Plug 'justmao945/vim-clang'
 Plug 'mattn/emmet-vim'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 let g:rehash256 = 1
 " color molokai set bg=dark
+color gruvbox
 set mouse=a
 set go=a
 set nohlsearch

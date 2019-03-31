@@ -16,5 +16,5 @@ esac
 [ ! -n "${wifiicon+var}" ] && wifiicon=$(grep "^\s*w" /proc/net/wireless | awk '{ print "", int($3 * 100 / 70) "%" }')
 
 printf "$(blockcolor 14)"
-printf "%s %s" "$wifiicon" "$(cat /sys/class/net/e*/operstate | sed "s/down/ /;s/up//")" | tr -d '\n'
-printf "  </span>"
+printf "%s %s" "$wifiicon" "$(cat /sys/class/net/e*/operstate | sed "s/down//;s/up//")" | tr -d '\n'
+printf "</span>"

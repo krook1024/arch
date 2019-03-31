@@ -24,8 +24,11 @@ command=disk /
 command=battery BAT0
 interval=5
 
-[clock]
-interval=30
-
 [internet]
 interval=10
+
+[i3date]
+interval=30
+
+[clock]
+interval=1
