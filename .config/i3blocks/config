@@ -2,6 +2,9 @@ command=~/.scripts/statusbar/$BLOCK_NAME
 separator_block_width=25
 markup=pango
 
+[music]
+interval=10
+
 [weather]
 interval=3600
 signal=5
