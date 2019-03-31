@@ -1,8 +1,8 @@
 # vim: filetype=i3
 
 for_window [class="^.*"] border pixel 1
-set $gapsinner 8
-set $gapsouter 4
+set $gapsinner 20
+set $gapsouter 10
 gaps inner $gapsinner
 gaps outer $gapsouter
 set $term --no-startup-id $TERMINAL
