@@ -1,9 +1,8 @@
 ! Terminal settings
-st.alpha:225
+st.alpha:255
 st.font:mono:pixelsize=14:antialias=true:autohint=true
 
-
-*color0:  #282828
+*color0:  #1d2021
 *color10: #b8bb26
 *color11: #fabd2f
 *color12: #83a598
@@ -20,7 +19,7 @@ st.font:mono:pixelsize=14:antialias=true:autohint=true
 *color8:  #928374
 *color9:  #fb4934
 
-*background: #282828
+*background: #1d2021
 *foreground: #ebdbb2
-! hard contrast: *background: #1d2021
+! hard contrast: *background: #1d2021 old: #282828
 ! soft contrast: *background: #32302f
