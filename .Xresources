@@ -3,7 +3,7 @@ st.alpha:255
 st.font:mono:pixelsize=14:antialias=true:autohint=true
 
 ! Dracula Xresources palette
-*color0:     #000000
+*color0:     #282A36
 *color8:     #4D4D4D
 *color1:     #FF5555
 *color9:     #FF6E67

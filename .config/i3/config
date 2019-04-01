@@ -40,7 +40,7 @@ bar {
 	mode dock
 	modifier None
 
-	set $bg #1d2021
+	set_from_resource $bg color0 #000000
 
 	colors {
 		background $bg
