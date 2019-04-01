@@ -13,71 +13,37 @@ install_font_pkg() { # Installs needed packages
 		noto-fonts-cjk ttf-symbola ttf-roboto ttf-dejavu \
 		>/dev/null 2>&1
 
-
-	local nerdurl="https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts"
-
-	# Hack
-	echo "Installing Hack Nerd Font..."
-	install_font_from_git "Hack Regular.ttf" \
-		"$nerdurl/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Hack Bold.ttf" \
-		"$nerdurl/Hack/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Hack Italic.ttf" \
-		"$nerdurl/Hack/Italic/complete/Hack%20Italic%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Hack BoldItalic.ttf" \
-		"$nerdurl/Hack/BoldItalic/complete/Hack%20Bold%20Italic%20Nerd%20Font%20Complete.ttf"
-
-	# Fura Code
-	echo "Installing Fura Code Nerd Font..."
-	install_font_from_git "FuraCode Regular.ttf" \
-		"$nerdurl/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "FuraCoda Bold.ttf" \
-		"$nerdurl/FiraCode/Bold/complete/Fura%20Code%20Bold%20Nerd%20Font%20Complete.ttf"
-
-	# Sauce Code Pro
-	echo "Installing Sauce Code Pro Nerd Font"
-	install_font_from_git "Sauce Code Pro Regular.ttf" \
-		"$nerdurl/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Sauce Code Pro Bold.ttf" \
-		"$nerdurl/SourceCodePro/Bold/complete/Sauce%20Code%20Pro%20Bold%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Sauce Code Pro BoldItalic.ttf" \
-		"$nerdurl/SourceCodePro/Bold-Italic/complete/Sauce%20Code%20Pro%20Bold%20Italic%20Nerd%20Font%20Complete.ttf"
-
-	# Ubuntu
-	echo "Installing Ubuntu Nerd Font"
-	install_font_from_git "Ubuntu Nerd Font Complete.ttf" \
-		"$nerdurl/Ubuntu/Regular/complete/Ubuntu%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Ubuntu Bold Nerd Font Complete.ttf" \
-		"$nerdurl/Ubuntu/Bold/complete/Ubuntu%20Bold%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Ubuntu Bold Italic Nerd Font Complete.ttf" \
-		"$nerdurl/Ubuntu/Bold-Italic/complete/Ubuntu%20Bold%20Italic%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Ubuntu Italic Nerd Font Complete.ttf" \
-		"$nerdurl/Ubuntu/Regular-Italic/complete/Ubuntu%20Italic%20Nerd%20Font%20Complete.ttf"
-
-	# Ubuntu Mono
-	echo "Installing Ubuntu Mono Nerd Font"
-	install_font_from_git "Ubuntu Mono Nerd Font Complete.ttf" \
-		"$nerdurl/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Ubuntu Mono Bold Nerd Font Complete.ttf" \
-		"$nerdurl/UbuntuMono/Bold/complete/Ubuntu%20Mono%20Bold%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Ubuntu Mono Italic Nerd Font Complete.ttf" \
-		"$nerdurl/UbuntuMono/Regular-Italic/complete/Ubuntu%20Mono%20Italic%20Nerd%20Font%20Complete.ttf"
-	install_font_from_git "Ubuntu Mono Bold Italic Nerd Font Complete.ttf" \
-		"$nerdurl/UbuntuMono/Bold-Italic/complete/Ubuntu%20Mono%20Bold%20Italic%20Nerd%20Font%20Complete.ttf"
-
+	getNerdFont "Hack"
+	getNerdFont "FiraCode"
+	getNerdFont "SourceCodePro"
+	getNerdFont "Ubuntu"
+	getNerdFont "UbuntuMono"
 }
 
-install_font_from_git() {
-	# Usage: install_font_from_git font_name font_url
-	# We first download in a temporary directory so in
-	# case the download fails, we don't end up littering /usr/share/..
-	dir=$(mktemp -d)
-	(:;:)		# Micro sleep
-	cd $dir || return 1
-	sudo curl -fLo "$1" "$2" >/dev/null 2>&1
-	sudo cp -f $dir/* /usr/share/fonts/TTF
+getNerdFont() { # Downloads and installs a nerd font given a name
+	name=$1
+	echo "Getting $1..."
+	dir=$(mktemp -d) && cd $dir
+	echo "> Temporary directory created: $dir"
+	echo "> Downloading archive..."
+	local url="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0"
+	curl -fLo "tmp.zip" "$url/$name.zip" -# && unset url
+	[[ ! -f tmp.zip ]] && {
+		echo "Failed to download your file!"
+		exit
+	}
+	echo "> Extracting archive..."
+	unzip -d . "tmp.zip" >/dev/null 2>&1
+	rm -f *Compatible.ttf
+	rm -f *Mono.ttf
+	rm -f *.zip
+	echo "> Installing fonts:"
+	ls *.ttf
+	sudo mv -f *.ttf /usr/share/fonts/TTF/
 	(:;:)
-	sudo rm -rf $dir
+	echo "Done! Cleaning up now..."
+	rm -rf $dir
+	unset dir
 }
 
 install_new_config() { # Symlinks configuration files to /etc/fonts/conf.d
