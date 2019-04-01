@@ -5,9 +5,9 @@ markup=pango
 [music]
 interval=10
 
-[weather]
-interval=3600
-signal=5
+#[weather]
+#interval=3600
+#signal=5
 
 [memory]
 interval=30
