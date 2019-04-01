@@ -34,7 +34,7 @@ exec --no-startup-id unclutter
 exec --no-startup-id mpd
 
 bar {
-	font pango:mono 8
+	font pango:sans-serif 8
 	status_command i3blocks
 	position top
 	mode dock
