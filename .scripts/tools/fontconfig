@@ -22,7 +22,7 @@ install_font_pkg() { # Installs needed packages
 
 getNerdFont() { # Downloads and installs a nerd font given a name
 	name=$1
-	echo "Getting $1..."
+	echo "> Getting $1 (nerd font)..."
 	dir=$(mktemp -d) && cd $dir
 	echo "> Temporary directory created: $dir"
 	echo "> Downloading archive..."
@@ -41,7 +41,7 @@ getNerdFont() { # Downloads and installs a nerd font given a name
 	ls *.ttf
 	sudo mv -f *.ttf /usr/share/fonts/TTF/
 	(:;:)
-	echo "Done! Cleaning up now..."
+	echo "> Done! Cleaning up now..."
 	rm -rf $dir
 	unset dir
 }
