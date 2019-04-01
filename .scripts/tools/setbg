@@ -8,7 +8,6 @@ while getopts "d:" arg; do
 			img=${OPTARG}
 			convert "$img" -fill black -colorize 50% ~/.config/wall.png
 			notify-send -i "$HOME/.config/wall.png" "Wallpaper updated."
-			xwallpaper --zoom ~/.config/wall.png
 			;;
 		*)
 			break
@@ -19,5 +18,6 @@ done
 if [[ -f $1 ]]; then
 	cp -f "$1" ~/.config/wall.png >/dev/null 2>&1
 	notify-send -i "$HOME/.config/wall.png" "Wallpaper updated."
-	xwallpaper --zoom ~/.config/wall.png
 fi
+
+xwallpaper --zoom ~/.config/wall.png
