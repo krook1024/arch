@@ -13,12 +13,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tomasr/molokai'
 Plug 'justmao945/vim-clang'
 Plug 'mattn/emmet-vim'
-Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 call plug#end()
 
-let g:rehash256 = 1
-" color molokai set bg=dark
-color gruvbox
+" let g:rehash256 = 1
 set mouse=a
 set go=a
 set nohlsearch
@@ -28,6 +26,7 @@ set clipboard=unnamedplus
 	filetype plugin on
 	filetype plugin indent on
 	syntax on
+	color dracula
 	set encoding=utf-8
 	set number relativenumber
 	set shiftwidth=4
