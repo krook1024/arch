@@ -1,5 +1,5 @@
 ! Terminal settings
-st.alpha:240
+st.alpha:255
 st.font:mono:pixelsize=14:antialias=true:autohint=true
 
 ! Dracula Xresources palette

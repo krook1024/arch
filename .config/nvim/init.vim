@@ -16,6 +16,8 @@ Plug 'mattn/emmet-vim'
 Plug 'dracula/vim'
 call plug#end()
 
+let g:dracula_colorterm = 0
+
 " let g:rehash256 = 1
 set mouse=a
 set go=a
@@ -26,7 +28,7 @@ set clipboard=unnamedplus
 	filetype plugin on
 	filetype plugin indent on
 	syntax on
-	color dracula
+	colorscheme dracula
 	set encoding=utf-8
 	set number relativenumber
 	set shiftwidth=4
