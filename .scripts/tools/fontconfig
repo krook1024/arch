@@ -39,7 +39,7 @@ getNerdFont() { # Downloads and installs a nerd font given a name
 	rm -f -- *.zip
 	echo "> Installing these font files for $name:"
 	ls *.ttf
-	sudo mv -f *.ttf /usr/share/fonts/TTF/
+	sudo mv -f ./*.ttf /usr/share/fonts/TTF/
 	(:;:)
 	echo "> Done! Cleaning up now..."
 	rm -rf "$dir"
