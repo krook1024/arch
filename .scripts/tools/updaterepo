@@ -3,7 +3,7 @@
 REPODIR="$HOME/Repos/arch"
 
 copyfiles() {
-	cd ~
+	cd ~ || return
 
 	files=(\
 	# Bash related
@@ -35,12 +35,12 @@ copyfiles() {
 	.config/chromium-flags.conf)
 
 	for file in "${files[@]}"; do
-		cp -P --parents $file $REPODIR
+		cp -P --parents "$file" "$REPODIR"
 	done
 }
 
 copydirs() {
-	cd ~
+	cd ~ || return
 
 	directories=(.scripts/i3cmds .scripts/statusbar .scripts/tools \
 	.config/dunst \
@@ -52,12 +52,12 @@ copydirs() {
 	.config/gtk-3.0)
 
 	for dir in "${directories[@]}"; do
-		cp -P -r --parents $dir $REPODIR
+		cp -P -r --parents "$dir" "$REPODIR"
 	done
 }
 
 gitupdate() {
-	cd $REPODIR && \
+	cd "$REPODIR" && \
 	git add . && \
 	git commit -m "Update to dotfiles on $(date)" && \
 	git push
