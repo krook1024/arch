@@ -6,7 +6,8 @@ copyrepo() {
 	# Download the fresh repo to the desired directory and
 	# later copy the files over to ~.
 	echo "Updating dotfiles repo from github..."
-	cd $REPODIR && git pull
+	cd "$REPODIR" || exit
+	git pull || exit
 	echo "Copying dotfiles over to your home directory..."
 	cp -rfT "$REPODIR" "$1"
 	rm -rf "$HOME/.git" "$HOME/README.md" "$HOME/screenshot.png"
