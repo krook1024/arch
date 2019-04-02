@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# ! WARNING !
+# This script is currently under development.
+# ! WARNING !
+
+download() { # Downloads a Nerd Font given a specific name
+	local name=$1
+	echo "Downloading $name..."
+
+	# https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Ubuntu/Regular/complete/Ubuntu%20Nerd%20Font%20Complete.ttf
+	local repourl="https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts"
+
+	urls=( \
+		"$repourl/$name/Regular/complete/$(urlencode "$name Nerd Font Complete.ttf")" \
+		"$repourl/$name/Bold/complete/$(urlencode "$name Bold Nerd Font Complete.ttf")" \
+	)
+
+	for url in "${urls[@]}" ; do
+		downloadname=$(urldecode "$(echo $url | cut -d'/' -f12)")
+		echo $downloadname
+		curl -fLo "$downloadname" "$url"
+	done
+}
+
+urlencode() { # Taken from https://github.com/dylanaraps/pure-bash-bible
+    # Usage: urlencode "string"
+    local LC_ALL=C
+    for (( i = 0; i < ${#1}; i++ )); do
+        : "${1:i:1}"
+        case "$_" in
+            [a-zA-Z0-9.~_-])
+                printf '%s' "$_"
+            ;;
+
+            *)
+                printf '%%%02X' "'$_"
+            ;;
+        esac
+    done
+    printf '\n'
+}
+
+urldecode() { # Taken from https://github.com/dylanaraps/pure-bash-bible
+    # Usage: urldecode "string"
+    : "${1//+/ }"
+    printf '%b\n' "${_//%/\\x}"
+}
+
+usage() { # Prints how the script should be used
+	echo "Usage: nerdfont [name]"
+}
+
+[[ $1 == "" ]] && {
+	usage
+	exit
+}
+
+download "$*"

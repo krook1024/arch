@@ -12,7 +12,7 @@ base="${file%.*}"
 
 cd "$dir" || exit
 
-textype() { \
+textype() {
 	command="pdflatex"
 	( sed 5q "$file" | grep -i -q 'xelatex' ) && command="xelatex"
 	$command --output-directory="$dir" "$base" &&
@@ -20,7 +20,7 @@ textype() { \
 	biber --input-directory "$dir" "$base" &&
 	$command --output-directory="$dir" "$base" &&
 	$command --output-directory="$dir" "$base"
-	}
+}
 
 case "$file" in
 	*\.ms) refer -PS -e "$file" | groff -me -ms -kejpt -T pdf > "$base".pdf ;;
@@ -34,5 +34,6 @@ case "$file" in
 	*\.go) go run "$file" ;;
 	*\.sent) setsid sent "$file" 2>/dev/null & ;;
 	*\.xml) make ;;
+	*\.m) echo "waitfor(gcf)" | octave --no-gui --persist "$file" & ;;
 	*) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
 esac
