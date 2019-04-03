@@ -14,6 +14,8 @@ Plug 'tomasr/molokai'
 Plug 'justmao945/vim-clang'
 Plug 'mattn/emmet-vim'
 Plug 'dracula/vim'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 let g:dracula_colorterm = 0

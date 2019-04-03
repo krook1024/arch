@@ -12,6 +12,10 @@ copyrepo() {
 	cp -rfT "$REPODIR" "$1"
 	rm -rf "$HOME/.git" "$HOME/README.md" "$HOME/screenshot.png"
 
+	# Update nvim plugins
+	nvim -E -c "PlugInstall|visual|q|q" >/dev/null 2>&1
+	nvim -E -c "PlugUpdate|visual|q|q" >/dev/null 2>&1
+
 	# Refresh Xresources, shortcuts, wallpaper
 	# and finally restart i3.
 	xrdb ~/.Xresources >/dev/null 2>&1
