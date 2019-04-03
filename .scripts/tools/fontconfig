@@ -1,23 +1,37 @@
 #!/usr/bin/env bash
 
-delete_current_config() { # Deletes the current configuration
-	echo -n "Remove old font configuration (y/n)? "
+question() { # Displays a question that the user can respond to with either y or n
+	# Usage: question "question"
+	echo -n "$1 (y/n)? "
 	read -r answer
 	if [ "$answer" != "${answer#[Yy]}" ] ;then
-		sudo rm -rf /etc/fonts/conf.d/*
+		return 0
+	else
+		return 1
 	fi
 }
 
-install_font_pkg() { # Installs needed packages
+deleteCurrentConfig() { # Deletes the current configuration
+	echo "> Deleting current fontconfig..."
+	sudo rm -rf -- /etc/fonts/conf.d/*
+}
+
+installFontPkg() { # Installs needed packages
+	echo "> Installing packages from Arch repos and AUR..."
 	yay -S --noconfirm --needed noto-fonts noto-fonts-emoji \
 		noto-fonts-cjk ttf-symbola ttf-roboto ttf-dejavu \
 		>/dev/null 2>&1
 
-	getNerdFont "Hack"
-	getNerdFont "FiraCode"
-	getNerdFont "SourceCodePro"
-	getNerdFont "Ubuntu"
-	getNerdFont "UbuntuMono"
+	getNerdFont "Hack" || echo ">>Failed to install Hack"
+	getNerdFont "FiraCode" ||  echo ">> Failed to install FiraCode"
+	getNerdFont "SourceCodePro" || echo ">> Failed to install SourceCodePro"
+	getNerdFont "Ubuntu" || echo ">> Failed to install Ubuntu"
+	getNerdFont "UbuntuMono" || echo ">> Failed to install UbuntuMono"
+}
+
+deleteNerdFonts() {
+	echo "> Deleting all Nerd Fonts..."
+	sudo rm -rf -- /usr/share/fonts/TTF/*Nerd\ Font*.ttf
 }
 
 getNerdFont() { # Downloads and installs a nerd font given a name
@@ -30,7 +44,7 @@ getNerdFont() { # Downloads and installs a nerd font given a name
 	curl -fLo "tmp.zip" "$url/$name.zip" -# && unset url
 	[[ ! -f tmp.zip ]] && {
 		echo "Failed to download $name!"
-		return
+		return 1
 	}
 	echo "> Extracting archive..."
 	unzip -d . "tmp.zip" >/dev/null 2>&1
@@ -38,7 +52,7 @@ getNerdFont() { # Downloads and installs a nerd font given a name
 	rm -f -- *Mono.ttf
 	rm -f -- *.zip
 	echo "> Installing these font files for $name:"
-	ls *.ttf
+	ls -- *.ttf
 	sudo mv -f ./*.ttf /usr/share/fonts/TTF/
 	(:;:)
 	echo "> Done! Cleaning up now..."
@@ -46,7 +60,7 @@ getNerdFont() { # Downloads and installs a nerd font given a name
 	unset dir
 }
 
-install_new_config() { # Symlinks configuration files to /etc/fonts/conf.d
+installNewConfig() { # Symlinks configuration files to /etc/fonts/conf.d
 	needed_cfg=(10-hinting-slight.conf \
 		10-scale-bitmap-fonts.conf 10-sub-pixel-rgb.conf \
 		11-lcdfilter-default.conf \
@@ -61,15 +75,16 @@ install_new_config() { # Symlinks configuration files to /etc/fonts/conf.d
 }
 
 main() {
-	delete_current_config || echo "Didn't delete \
-		current font configuration!"
+	question "Delete current fontconfig?" && deleteCurrentConfig
+	question "Delete all Nerd Fonts?" && deleteNerdFonts
 
-	echo "Installing font packages..."
-	install_font_pkg || echo "Failed to install \
+	question "Install font packages" && {
+		installFontPkg || echo "Failed to install \
 		font packages!"
+	}
 
 	echo "Installing new font configuration..."
-	install_new_config || echo "Failed to install \
+	installNewConfig || echo "Failed to install \
 		new font configuration!"
 
 	echo "Refresing font cache..."
