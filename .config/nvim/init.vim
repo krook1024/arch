@@ -19,6 +19,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 let g:dracula_colorterm = 0
+let g:pandoc#spell#enabled = 0
 
 " let g:rehash256 = 1
 set mouse=a
