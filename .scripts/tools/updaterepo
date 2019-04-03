@@ -30,9 +30,7 @@ copyfiles() {
 	.config/ranger/rc.conf .config/ranger/rifle.conf \
 	.config/ranger/shortcuts.conf \
 	# Unix ascii art
-	.scripts/unix \
-	# Chromium start flags
-	.config/chromium-flags.conf)
+	.scripts/unix)
 
 	for file in "${files[@]}"; do
 		cp -P --parents "$file" "$REPODIR"
