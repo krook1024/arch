@@ -12,4 +12,3 @@ map i recolor
 map p print
 map + zoom in
 map - zoom out
-map = zoom reset

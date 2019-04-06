@@ -1,8 +1,10 @@
+# vim: ft=cfg
+
 [global]
     alignment = left
-    allow_markup = yes
+	allow_markup = true
     bounce_freq = 0
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/chromium --new-tab
     dmenu = /usr/bin/dmenu -p dunst
     follow = keyboard
     font = Hack Nerd Font 8
@@ -15,6 +17,7 @@
     ignore_newline = no
     indicate_hidden = yes
     line_height = 5
+	markup = full
     max_icon_size = 40
     monitor = 0
     padding = 10
