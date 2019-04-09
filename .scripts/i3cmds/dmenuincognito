@@ -6,4 +6,4 @@ url=$(echo "🌍" | dmenu -i)
 
 [ "$url" != "" ] || exit
 
-setsid $BROWSER --private-window $url
+setsid $BROWSER --private-window --incognito $url
