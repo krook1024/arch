@@ -40,6 +40,7 @@ command -v nvim >/dev/null &&
 
 shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}
 se() { du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDITOR ;}
+sup() { du -a ~/Repos/udprog-code/source/* | awk '{print $2}' | fzf | xargs -r $EDITOR ;}
 sv() { vcopy "$(du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf)" ;}
 vf() { fzf | xargs -r -I % $EDITOR % ;}
 quickgit() { git add . ; git commit -m "$*" ; git push ;}
