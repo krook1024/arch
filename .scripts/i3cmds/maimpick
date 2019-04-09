@@ -9,12 +9,3 @@ case "$(printf "a selected area\\na selected area with shadow\\ncurrent window\\
 	"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png ;;
 	"full screen (copy)") maim | xclip -selection clipboard -t image/png ;;
 esac
-
-
-
-
-
-
-
-
-# ~ ➜ maim -st 9999999 | convert - \( +clone -background black -shadow 80x10+0+0 \) +swap -background none -layers merge +repage shadow.png
