@@ -25,7 +25,7 @@ copyfiles() {
 	# Git configuration
 	.gitconfig \
 	# Default applications
-	.config/mimeapps.list \
+	.config/mimeapps.list .local/share/applications \
 	# Ranger configuration
 	.config/ranger/rc.conf .config/ranger/rifle.conf \
 	.config/ranger/shortcuts.conf \
