@@ -25,7 +25,7 @@ copyfiles() {
 	# Git configuration
 	.gitconfig \
 	# Default applications
-	.config/mimeapps.list .local/share/applications \
+	.config/mimeapps.list \
 	# Ranger configuration
 	.config/ranger/rc.conf .config/ranger/rifle.conf \
 	.config/ranger/shortcuts.conf \
@@ -47,7 +47,8 @@ copydirs() {
 	.config/zathura \
 	.vim \
 	.config/gtk-2.0
-	.config/gtk-3.0)
+	.config/gtk-3.0 \
+	.local/share/default/applications)
 
 	for dir in "${directories[@]}"; do
 		cp -P -r --parents "$dir" "$REPODIR"
