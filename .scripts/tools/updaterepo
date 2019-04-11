@@ -48,7 +48,7 @@ copydirs() {
 	.vim \
 	.config/gtk-2.0
 	.config/gtk-3.0 \
-	.local/share/default/applications)
+	.local/share/applications)
 
 	for dir in "${directories[@]}"; do
 		cp -P -r --parents "$dir" "$REPODIR"
