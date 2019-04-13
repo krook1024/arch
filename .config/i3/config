@@ -16,6 +16,7 @@ set $hibernate sudo -A systemctl suspend
 
 # General dropdown window traits. The order can matter.
 for_window [instance="Mandelb*"] floating enable
+for_window [instance="chromium"] border pixel 0
 for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
