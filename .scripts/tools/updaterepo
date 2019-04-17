@@ -13,7 +13,7 @@ copyfiles() {
 	# Vim related
 	.vimrc .config/nvim/init.vim .config/nvim/autoload/plug.vim \
 	# X related
-	.xinitrc .Xresources \
+	.Xresources \
 	# Font config \
 	.config/fontconfig/fonts.conf \
 	# Shortcut files
