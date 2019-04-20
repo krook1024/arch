@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=CrypTool
-Exec=env WINEPREFIX="/home/b1/.wine" /usr/bin/wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/b1/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/CrypTool/CrypTool.lnk
-Type=Application
-StartupNotify=true
-Path=/home/b1/.wine/dosdevices/c:/Program Files (x86)/CrypTool
-Icon=1B9A_CrypTool.0
-StartupWMClass=cryptool.exe

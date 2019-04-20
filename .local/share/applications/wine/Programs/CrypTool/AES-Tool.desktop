@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=AES-Tool
-Exec=env WINEPREFIX="/home/b1/.wine" /usr/bin/wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/b1/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/CrypTool/AES-Tool.lnk
-Type=Application
-StartupNotify=true
-Path=/home/b1/.wine/dosdevices/c:/Program Files (x86)/CrypTool
-Icon=0A4D_aestool.0
-StartupWMClass=aestool.exe
