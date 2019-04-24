@@ -45,6 +45,8 @@ set clipboard=unnamedplus
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" no paste mode
+	autocmd BufWrite set nopaste
 
 " Emmet settings
 "	let g:user_emmet_leader_key='<C-Z>'
