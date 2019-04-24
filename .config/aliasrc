@@ -33,7 +33,8 @@ alias ka="killall" \
 	updatemirrors='sudo reflector --country France --country Germany --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo rm -f /etc/pacman.d/mirrorlist.pacnew' \
 	n="setsid samedir" \
 	bt="bluetoothctl" \
-	nf='neofetch --disable gpu resolution icons theme  --ascii "$(fortune | cowsay -W 30 | lolcat)" | lolcat'
+	nf='neofetch --disable gpu resolution icons theme  --ascii "$(fortune | cowsay -W 30 | lolcat)" | lolcat' \
+	pp='sudo powerpill'
 
 command -v nvim >/dev/null &&
 	alias vim="nvim" vimdiff="nvim -d"

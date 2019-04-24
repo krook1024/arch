@@ -3,7 +3,6 @@ h	~/
 d	~/Documents
 D	~/Downloads
 m	~/Music
-pp	~/Pictures
 vv	~/Videos
 cf	~/.config
 sc	~/.scripts
@@ -12,5 +11,5 @@ u	~/Repos/Uni
 tb	~/Repos/textbook
 tf	~/Repos/textbook/files
 sp	~/.startpage
-alkm ~/Repos/Uni/Alkmat/octave
-calc ~/Repos/Calculus
+am	~/Repos/Uni/Alkmat/octave
+ca	~/Repos/Calculus
