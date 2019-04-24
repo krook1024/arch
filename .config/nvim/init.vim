@@ -89,7 +89,7 @@ set clipboard=unnamedplus
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
 
-" Compile document, be it groff/LaTeX/markdown/etc.
+" Compile document
 	map <leader>c :w! \| !compiler <c-r>%<CR>
 
 " Open corresponding .pdf/.html or preview
