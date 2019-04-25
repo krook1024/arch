@@ -9,3 +9,4 @@ export PS1="\[\e[34m\]\W\[\e[m\] \[\e[32m\]➜\[\e[m\] "
 
 # java
 # export JAVA_HOME=/opt/java
+export MALMO_XSD_PATH=~/Repos/malmo/Schemas

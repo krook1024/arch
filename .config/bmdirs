@@ -7,9 +7,10 @@ vv	~/Videos
 cf	~/.config
 sc	~/.scripts
 mn	/mnt
-u	~/Repos/Uni
 tb	~/Repos/textbook
 tf	~/Repos/textbook/files
 sp	~/.startpage
 am	~/Repos/Uni/Alkmat/octave
 ca	~/Repos/Calculus
+u	~/Repos/Uni
+uh	~/Repos/Uni/Halozatok
