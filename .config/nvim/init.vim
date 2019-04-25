@@ -259,4 +259,5 @@ set clipboard=unnamedplus
 	autocmd FileType docbk inoremap ,b <emphasis role="strong"></emphasis><Esc>10hi
 	autocmd FileType docbk inoremap ,i <emphasis></emphasis><Esc>10hi
 	autocmd FileType docbk inoremap ,cd <![CDATA[]]><Esc>2hi
-	autocmd FileType docbk inoremap ,pl <programlisting language="<++>"><Enter><textobject><Enter><textdata fileref="<++>" /><Enter></textobject><Enter></programlisting>
+"	autocmd FileType docbk inoremap ,pl <programlisting language="<++>"><Enter><textobject><Enter><textdata fileref="<++>" /><Enter></textobject><Enter></programlisting>
+	autocmd FileType docbk inoremap ,pl <programlisting language="<++>"><xi:include href="<++>" parse="text" /></programlisting>
