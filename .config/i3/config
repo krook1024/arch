@@ -1,6 +1,7 @@
 # vim: filetype=i3
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
+smart_gaps on
 hide_edge_borders both
 set $gapsinner 20
 set $gapsouter 10
