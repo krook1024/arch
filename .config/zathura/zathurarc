@@ -1,6 +1,13 @@
+#vim: ft=cfg
+# Zathura settings
+
 set statusbar-h-padding 0
 set statusbar-v-padding 0
+
+# Space between each page
 set page-padding 1
+
+# Keyboard mappings
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
@@ -12,3 +19,16 @@ map i recolor
 map p print
 map + zoom in
 map - zoom out
+
+# Main background
+set default-bg "#282A36"
+set default-fg "#FFFFFF"
+
+# Statusbar
+set statusbar-bg "#BD93F9"
+set statusbar-fg "#282A36"
+
+# Recolor documents to Dracula colorscheme
+set recolor 1
+set recolor-lightcolor "#282A36"
+set recolor-darkcolor "#F8F8F2"
