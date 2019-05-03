@@ -16,16 +16,10 @@ filename="$1"
 filetype="$2"
 
 case "$filetype" in
-	"art")
-		: "article.tex"
-	;;
+	"art") : "article.tex" ;;
+	"arthun") : "article_hun.tex" ;;
 
-	"arthun")
-		: "article_hun.tex"
-	;;
-
-	*)
-		usage
+	*)	usage
 		exit 1
 	;;
 esac
