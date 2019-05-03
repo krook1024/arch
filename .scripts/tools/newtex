@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+templatesdir="$HOME/Templates"
+
+usage() {
+	echo "Usage: newtex filename type"
+	echo "	type can be: art, arthun"
+}
+
+if [ "$#" -ne 2 ]; then
+	usage
+	exit 1
+fi
+
+filename="$1"
+filetype="$2"
+
+case "$filetype" in
+	"art")
+		: "article.tex"
+	;;
+
+	"arthun")
+		: "article_hun.tex"
+	;;
+
+	*)
+		usage
+		exit 1
+	;;
+esac
+
+templatefile="$templatesdir/$_"
+
+if [ ! -e "$filename" ] ; then
+	cp "$templatefile" "$filename" || echo "Failed to copy template to new file" ; exit
+else
+	echo "File already exists"
+fi
