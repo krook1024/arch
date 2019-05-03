@@ -252,10 +252,14 @@ set clipboard=unnamedplus
 " RMD - matek
 	autocmd Filetype rmd inoremap ,mat \begin{gather*}<Enter><Enter>\end{gather*}<Esc>kA<Tab>
 	autocmd Filetype rmd inoremap ,def **Definíció.**<space>
-	autocmd Filetype rmd inoremap ,in \int{}<Esc>i
-	autocmd Filetype rmd inoremap ,te \text{}<Esc>i
-	autocmd Filetype rmd inoremap ,fr \frac{}{<++>}<Esc>6hi
+	autocmd Filetype rmd inoremap ,tet **Tétel.**<space>
+	autocmd Filetype rmd inoremap ,in \int{ dx}<++><Esc>7hi
+	autocmd Filetype rmd inoremap ,te \text{}<++><Esc>4hi
+	autocmd Filetype rmd inoremap ,fr \frac{}{<++>}<++><Esc>10hi
 	autocmd FIletype rmd inoremap ,ve \vert_{}<Esc>i
+	autocmd FIletype rmd inoremap ,ra \rightarrow<Space>
+	autocmd FIletype rmd inoremap ,cd \cdot<Space>
+
 
 """.xml
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
