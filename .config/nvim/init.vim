@@ -249,6 +249,14 @@ set clipboard=unnamedplus
 	autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
 	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
 
+" RMD - matek
+	autocmd Filetype rmd inoremap ,mat \begin{gather*}<Enter><Enter>\end{gather*}<Esc>kA<Tab>
+	autocmd Filetype rmd inoremap ,def **Definíció.**<space>
+	autocmd Filetype rmd inoremap ,in \int{}<Esc>i
+	autocmd Filetype rmd inoremap ,te \text{}<Esc>i
+	autocmd Filetype rmd inoremap ,fr \frac{}{<++>}<Esc>6hi
+	autocmd FIletype rmd inoremap ,ve \vert_{}<Esc>i
+
 """.xml
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
 	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
