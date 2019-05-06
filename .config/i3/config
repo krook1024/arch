@@ -50,7 +50,7 @@ client.urgent           $color1 $color1 #ffffff $color1   $color1
 client.placeholder      $color2 $color2 #ffffff $color2	  $color2
 
 bar {
-	font pango:mono 8
+	font pango:sans-serif 8
 	status_command i3blocks
 	position top
 	mode dock

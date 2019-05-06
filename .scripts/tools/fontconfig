@@ -22,14 +22,14 @@ installFontPkg() { # Installs needed packages
 		noto-fonts-cjk ttf-symbola ttf-roboto ttf-dejavu \
 		>/dev/null 2>&1
 
-	getNerdFont "3270" || echo ">>Failed to install 3270"
-	getNerdFont "AnonymousPro" || echo ">>Failed to install AnonymousPro"
+	# getNerdFont "3270" || echo ">>Failed to install 3270"
+	# getNerdFont "AnonymousPro" || echo ">>Failed to install AnonymousPro"
 	getNerdFont "Hack" || echo ">>Failed to install Hack"
-	getNerdFont "FiraCode" ||  echo ">> Failed to install FiraCode"
-	getNerdFont "SourceCodePro" || echo ">> Failed to install SourceCodePro"
+	# getNerdFont "FiraCode" ||  echo ">> Failed to install FiraCode"
+	# getNerdFont "SourceCodePro" || echo ">> Failed to install SourceCodePro"
 	# getNerdFont "Ubuntu" || echo ">> Failed to install Ubuntu"
-	getNerdFont "UbuntuMono" || echo ">> Failed to install UbuntuMono"
-	getNerdFont "Terminus" || echo ">> Failed to install Terminus"
+	# getNerdFont "UbuntuMono" || echo ">> Failed to install UbuntuMono"
+	# getNerdFont "Terminus" || echo ">> Failed to install Terminus"
 }
 
 deleteNerdFonts() {
@@ -69,7 +69,7 @@ installNewConfig() { # Symlinks configuration files to /etc/fonts/conf.d
 		11-lcdfilter-default.conf \
 		30-metric-aliases.conf \
 		50-user.conf 60-generic.conf \
-		66-noto-sans.conf 66-noto-serif.conf \
+		# 66-noto-sans.conf 66-noto-serif.conf \
 		90-synthetic.conf)
 
 	for i in "${needed_cfg[@]}"; do
