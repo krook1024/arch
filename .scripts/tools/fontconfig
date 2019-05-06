@@ -71,6 +71,8 @@ installNewConfig() { # Symlinks configuration files to /etc/fonts/conf.d
 		11-lcdfilter-default.conf \
 		30-metric-aliases.conf \
 		50-user.conf 60-generic.conf \
+		57-dejavu-sans.conf 57-dejavu-serif.conf \
+		60-generic.conf \
 		# 66-noto-sans.conf 66-noto-serif.conf \
 		90-synthetic.conf)
 
