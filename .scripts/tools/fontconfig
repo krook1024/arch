@@ -35,6 +35,8 @@ installFontPkg() { # Installs needed packages
 deleteNerdFonts() {
 	echo "> Deleting all Nerd Fonts..."
 	sudo rm -rf -- /usr/share/fonts/TTF/*Nerd\ Font*.ttf
+	sudo rm -rf -- /usr/share/fonts/TTF/Sauce\ Code Pro*.ttf
+	sudo rm -rf -- /usr/share/fonts/TTF/FuraCode*.ttf
 }
 
 getNerdFont() { # Downloads and installs a nerd font given a name
