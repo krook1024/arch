@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+templatesdir="$HOME/Templates"
+
+usage() {
+	echo "Usage: fromtemplate filename type"
+	echo "Available templates: "
+	ls "$templatesdir"
+}
+
+if [ "$#" -ne 2 ]; then
+	usage
+	exit 1
+fi
+
+filename="$1"
+templatefile="$templatesdir/$2"
+
+if [ ! -e "$filename" ] ; then
+	cp "$templatefile" "$filename" || echo "Failed to copy template to new file" ; exit
+else
+	echo "File already exists"
+fi
