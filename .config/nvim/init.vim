@@ -251,8 +251,8 @@ set clipboard=unnamedplus
 
 " RMD - matek
 	autocmd Filetype tex,rmd inoremap ,mat \begin{gather*}<Enter><Enter>\end{gather*}<Esc>kA<Tab>
-	autocmd Filetype tex,rmd inoremap ,def **Definíció.**<space>
-	autocmd Filetype tex,rmd inoremap ,tet **Tétel.**<space>
+	autocmd Filetype rmd inoremap ,def **Definíció.**<space>
+	autocmd Filetype rmd inoremap ,tet **Tétel.**<space>
 	autocmd Filetype tex,rmd inoremap ,in \int{ dx}<++><Esc>7hi
 	autocmd Filetype tex,rmd inoremap ,te \text{}<++><Esc>4hi
 	autocmd Filetype tex,rmd inoremap ,fr \frac{}{<++>}<++><Esc>10hi
