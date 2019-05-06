@@ -250,15 +250,15 @@ set clipboard=unnamedplus
 	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
 
 " RMD - matek
-	autocmd Filetype rmd inoremap ,mat \begin{gather*}<Enter><Enter>\end{gather*}<Esc>kA<Tab>
-	autocmd Filetype rmd inoremap ,def **Definíció.**<space>
-	autocmd Filetype rmd inoremap ,tet **Tétel.**<space>
-	autocmd Filetype rmd inoremap ,in \int{ dx}<++><Esc>7hi
-	autocmd Filetype rmd inoremap ,te \text{}<++><Esc>4hi
-	autocmd Filetype rmd inoremap ,fr \frac{}{<++>}<++><Esc>10hi
-	autocmd FIletype rmd inoremap ,ve \vert_{}<Esc>i
-	autocmd FIletype rmd inoremap ,ra \rightarrow<Space>
-	autocmd FIletype rmd inoremap ,cd \cdot<Space>
+	autocmd Filetype tex,rmd inoremap ,mat \begin{gather*}<Enter><Enter>\end{gather*}<Esc>kA<Tab>
+	autocmd Filetype tex,rmd inoremap ,def **Definíció.**<space>
+	autocmd Filetype tex,rmd inoremap ,tet **Tétel.**<space>
+	autocmd Filetype tex,rmd inoremap ,in \int{ dx}<++><Esc>7hi
+	autocmd Filetype tex,rmd inoremap ,te \text{}<++><Esc>4hi
+	autocmd Filetype tex,rmd inoremap ,fr \frac{}{<++>}<++><Esc>10hi
+	autocmd FIletype tex,rmd inoremap ,ve \vert_{}<Esc>i
+	autocmd FIletype tex,rmd inoremap ,ra \rightarrow<Space>
+	autocmd FIletype tex,rmd inoremap ,cd \cdot<Space>
 
 
 """.xml
