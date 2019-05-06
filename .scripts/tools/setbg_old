@@ -1,0 +1,25 @@
+#!/bin/sh
+# Sets the background. If given an argument, will set file as background.
+# If -d is given, it'll darken the image.
+
+while getopts "d:" arg; do
+	case "${arg}" in
+		d)
+			img=${OPTARG}
+			convert "$img" -fill black -colorize 50% ~/.config/wall.png
+			notify-send -i "$HOME/.config/wall.png" "Wallpaper updated."
+			xwallpaper --zoom ~/.config/wall.png
+			;;
+		*)
+			break
+			;;
+	esac
+done
+
+if [[ -f $1 ]]; then
+	cp -f "$1" ~/.config/wall.png
+	notify-send -i "$HOME/.config/wall.png" "Wallpaper updated."
+	xwallpaper --zoom ~/.config/wall.png
+fi
+
+xwallpaper --zoom ~/.config/wall.png
