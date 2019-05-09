@@ -15,7 +15,7 @@ esac
 
 [ ! -n "${wifiicon+var}" ] && wifiicon=$(grep "^\s*w" /proc/net/wireless | awk '{ print "", int($3 * 100 / 70) "%" }')
 
-addr=$(ip route get 1.2.3.4 | awk '{print $3}' | tr -d '\n')
+addr=$(ip route get 1.2.3.4 | awk '{print $7}' | tr -d '\n')
 
 printf "$(blockcolor 14)"
 printf "%s %s" "$wifiicon" "$(cat /sys/class/net/e*/operstate | sed "s/down/ /;s/up/ /")" "$addr" | tr -d '\n'
