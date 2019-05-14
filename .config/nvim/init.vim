@@ -1,35 +1,33 @@
 let mapleader =","
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
-Plug 'LukeSmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
-Plug 'tomasr/molokai'
 Plug 'justmao945/vim-clang'
 Plug 'mattn/emmet-vim'
-Plug 'dracula/vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'dracula/vim'
 call plug#end()
 
-let g:dracula_colorterm = 0
+" Dracula
+	let g:dracula_colorterm = 0
 
 " Pandoc-vim settings
-let g:pandoc#spell#enabled = 0
-"let g:pandoc#filetypes#handled = ["pandoc", "markdown", "rmarkdown"]
+	let g:pandoc#spell#enabled = 0
 
-" let g:rehash256 = 1
-set mouse=a
-set go=a
-set nohlsearch
-set clipboard=unnamedplus
-" Some basics:
+" Basics
+	set mouse=a
+	set go=a
+	set nohlsearch
+	set clipboard=unnamedplus
+
+" Some more basics
 	set nocompatible
 	filetype plugin on
 	filetype plugin indent on
@@ -41,20 +39,19 @@ set clipboard=unnamedplus
 	set tabstop=4
 	nnoremap <Space> @q
 	nnoremap c "_c
+
 " Enable autocompletion:
 	set wildmode=longest,list,full
+
 " Disables automatic commenting on newline:
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-" no paste mode
-	autocmd BufWrite set nopaste
+"	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Emmet settings
-"	let g:user_emmet_leader_key='<C-Z>'
 	let g:user_emmet_install_global = 0
 	autocmd FileType html,css EmmetInstall
 
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>f :Goyo \| set linebreak<CR>
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
@@ -65,13 +62,6 @@ set clipboard=unnamedplus
 " Nerd tree
 	map <C-n> :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" vimling:
-	nm <leader>d :call ToggleDeadKeys()<CR>
-	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
-	nm <leader>i :call ToggleIPA()<CR>
-	imap <leader>i <esc>:call ToggleIPA()<CR>a
-	nm <leader>q :call ToggleProse()<CR>
 
 " Shortcutting split navigation, saving a keypress:
 	map <C-h> <C-w>h
