@@ -44,8 +44,9 @@ copydirs() {
 	.config/i3blocks \
 	.config/zathura \
 	.vim \
-	.config/gtk-2.0
-	.config/gtk-3.0)
+	.config/gtk-2.0 \
+	.config/gtk-3.0 \
+	.config/sxiv)
 	for dir in "${directories[@]}"; do
 		cp -P -r --parents "$dir" "$REPODIR"
 	done
