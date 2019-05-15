@@ -37,6 +37,7 @@ call plug#end()
 	set number relativenumber
 	set shiftwidth=4
 	set tabstop=4
+	set cc=80
 	nnoremap <Space> @q
 	nnoremap c "_c
 
