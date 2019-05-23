@@ -247,10 +247,10 @@ call plug#end()
 	autocmd Filetype tex,rmd inoremap ,in \int{ dx}<++><Esc>7hi
 	autocmd Filetype tex,rmd inoremap ,te \text{}<++><Esc>4hi
 	autocmd Filetype tex,rmd inoremap ,fr \frac{}{<++>}<++><Esc>10hi
-	autocmd FIletype tex,rmd inoremap ,ve \vert_{}<Esc>i
-	autocmd FIletype tex,rmd inoremap ,ra \rightarrow<Space>
-	autocmd FIletype tex,rmd inoremap ,cd \cdot<Space>
-
+	autocmd Filetype tex,rmd inoremap ,ve \vert_{}<Esc>i
+	autocmd Filetype tex,rmd inoremap ,ra \rightarrow<Space>
+	autocmd Filetype tex,rmd inoremap ,cd \cdot<Space>
+	autocmd Filetype tex,rmd inoremap ,ta \begin{table}[H]<Enter>\centering<Enter>\caption{<++>}<Enter>\begin{tabular}{<++>}<Enter>\hline<Enter><++><Enter>\end{tabular}<Enter>\end{table}<Enter><Esc>,,
 
 """.xml
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
