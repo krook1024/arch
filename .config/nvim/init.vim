@@ -1,22 +1,23 @@
 let mapleader =","
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'Rigellute/shades-of-purple.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
-Plug 'justmao945/vim-clang'
-Plug 'mattn/emmet-vim'
+" Plug 'justmao945/vim-clang'
+" Plug 'mattn/emmet-vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'dracula/vim'
 call plug#end()
 
-" Dracula
-	let g:dracula_colorterm = 0
+" Colorscheme-related
+	let g:shades_of_purple_airline = 1
+	let g:airline_theme='shades_of_purple'
 
 " Pandoc-vim settings
 	let g:pandoc#spell#enabled = 0
@@ -26,13 +27,14 @@ call plug#end()
 	set go=a
 	set nohlsearch
 	set clipboard=unnamedplus
+	set termguicolors
 
 " Some more basics
 	set nocompatible
 	filetype plugin on
 	filetype plugin indent on
 	syntax on
-	colorscheme dracula
+	colorscheme shades_of_purple
 	set encoding=utf-8
 	set number relativenumber
 	set shiftwidth=4
@@ -43,13 +45,6 @@ call plug#end()
 
 " Enable autocompletion:
 	set wildmode=longest,list,full
-
-" Disables automatic commenting on newline:
-"	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Emmet settings
-	let g:user_emmet_install_global = 0
-	autocmd FileType html,css EmmetInstall
 
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set linebreak<CR>
