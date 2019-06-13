@@ -1,5 +1,6 @@
 #!/bin/sh
 alias ka="killall" \
+	lpr="lpr -o media=a4" \
 	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
 	calcurse="calcurse -D ~/.config/calcurse" \
 	magit="nvim -c Magit" \
