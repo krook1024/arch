@@ -31,11 +31,11 @@ for_window [instance="dropdown_*"] move position center
 
 exec --no-startup-id compton -b
 # exec --no-startup-id nm-applet
+# exec --no-startup-id mpd
 exec --no-startup-id setbg
 exec_always --no-startup-id dunst
 exec --no-startup-id remaps
 exec --no-startup-id unclutter
-exec --no-startup-id mpd
 
 # Colors
 set $color0 #ccc
@@ -50,7 +50,7 @@ client.urgent           $color1 $color1 #ffffff $color1   $color1
 client.placeholder      $color2 $color2 #ffffff $color2	  $color2
 
 bar {
-	font pango:sans-serif 8
+	font pango:mono 9
 	status_command i3blocks
 	position top
 	mode dock
