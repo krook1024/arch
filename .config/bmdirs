@@ -1,16 +1,16 @@
 # You can add comments to these files with #
+# System wide
+mn	/mnt
+# User directory
 h	~/
-d	~/Documents
-D	~/Downloads
-m	~/Music
-vv	~/Videos
+d	~/doc
+D	~/dl
+m	~/music
+vv	~/vid
 cf	~/.config
 sc	~/.scripts
-mn	/mnt
-tb	~/Repos/textbook
-tf	~/Repos/textbook/files
 sp	~/.startpage
-am	~/Repos/Uni/Alkmat/octave
-ca	~/Repos/Calculus
-u	~/Repos/Uni
-uh	~/Repos/Uni/Halozatok
+# University related
+u	~/repos/Uni
+tb	~/repos/textbook
+tf	~/repos/textbook/files

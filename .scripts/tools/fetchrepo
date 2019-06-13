@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-REPODIR="$HOME/Repos/arch"
+REPODIR="$HOME/repos/arch"
 
 copyrepo() {
 	# Download the fresh repo to the desired directory and
