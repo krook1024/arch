@@ -7,10 +7,10 @@ st.font:		mono:pixelsize=14:antialias=true:autohint=true
 *color1:		#A599E9
 *color2:		#A5FF90
 *color3:		#FAEFA5
-*color4:		#FF7200
+*color4:		#BFBFBF
 *color5:		#FF628C
 *color6:		#8BE9FD
-*color7:		#BFBFBF
+*color7:		#FF7200
 *color8:		#4D4D4D
 *color9:		#FF6E67
 *color10:		#3AD900

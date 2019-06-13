@@ -1,6 +1,6 @@
 #!/bin/sh
 
-printf "$(blockcolor 7)  "
+printf "$(blockcolor 4)  "
 date '+%H:%M' | tr -d '\n'
 printf "</span>"
 
