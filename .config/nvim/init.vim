@@ -13,11 +13,15 @@ Plug 'tpope/vim-commentary'
 " Plug 'mattn/emmet-vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'chrisbra/Colorizer'
 call plug#end()
 
 " Colorscheme-related
 	let g:shades_of_purple_airline = 1
 	let g:airline_theme='shades_of_purple'
+
+" Colorizer filetypes
+    let g:colorizer_auto_filetype='scss,css,html,xdefaults'
 
 " Pandoc-vim settings
 	let g:pandoc#spell#enabled = 0
