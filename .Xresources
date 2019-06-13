@@ -1,5 +1,5 @@
 ! Terminal settings
-st.alpha:		0.85
+st.alpha:		1.00
 st.font:		mono:pixelsize=14:antialias=true:autohint=true
 
 ! Shades-of-purple xresources palette
