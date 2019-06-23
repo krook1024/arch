@@ -1,24 +1,20 @@
 let mapleader =","
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'Rigellute/shades-of-purple.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
-" Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
-" Plug 'justmao945/vim-clang'
-" Plug 'mattn/emmet-vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
 call plug#end()
 
 " Colorscheme-related
-	let g:shades_of_purple_airline = 1
-	let g:airline_theme='shades_of_purple'
+"	let g:shades_of_purple_airline = 1
+"	let g:airline_theme='shades_of_purple'
 
 " Colorizer filetypes
     let g:colorizer_auto_filetype='scss,css,html,xdefaults'
@@ -38,7 +34,6 @@ call plug#end()
 	filetype plugin on
 	filetype plugin indent on
 	syntax on
-	colorscheme shades_of_purple
 	set encoding=utf-8
 	set number relativenumber
 	set shiftwidth=4

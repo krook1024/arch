@@ -38,36 +38,34 @@ exec --no-startup-id remaps
 exec --no-startup-id unclutter
 
 # Colors
-set $color0 #ccc
-set_from_resource $color1 color1 #000000
-set_from_resource $color2 color4 #000000
-set_from_resource $color3 color3 #000000
+#set $color0 #ccc
+#set_from_resource $color1 color1 #000000
+#set_from_resource $color2 color4 #000000
+#set_from_resource $color3 color3 #000000
 # class                 border  backgr. text    indicator child_border
-client.focused          $color2 $color2 #ffffff $color2	  $color2
-client.focused_inactive $color0 $color0 #ffffff $color0   $color0
-client.unfocused        $color0 $color0 #888888 $color0   $color0
-client.urgent           $color1 $color1 #ffffff $color1   $color1
-client.placeholder      $color2 $color2 #ffffff $color2	  $color2
+#client.focused          $color2 $color2 #ffffff $color2	  $color2
+#client.focused_inactive $color0 $color0 #ffffff $color0   $color0
+#client.unfocused        $color0 $color0 #888888 $color0   $color0
+#client.urgent           $color1 $color1 #ffffff $color1   $color1
+#client.placeholder      $color2 $color2 #ffffff $color2	  $color2
 
 bar {
-	font pango:mono 9
+	font pango:sans-serif 8
 	status_command i3blocks
 	position top
 	mode dock
 	modifier None
-
-	set_from_resource $bg color0 #000000
-
-	colors {
-		background $bg
-		statusline #ffffff
-		separator $bg
-		#                  border 	backgr.	text
-		focused_workspace  $bg		$bg 	#ffffff
-		active_workspace   $bg		$bg 	#ffffff
-		inactive_workspace $bg		$bg 	#888888
-		urgent_workspace   $bg		$bg 	#ff0000
-	}
+	#set_from_resource $bg color0 #000000
+	#colors {
+	#	background $bg
+	#	statusline #ffffff
+	#	separator $bg
+	#	#                  border 	backgr.	text
+	#	focused_workspace  $bg		$bg 	#ffffff
+	#	active_workspace   $bg		$bg 	#ffffff
+	#	inactive_workspace $bg		$bg 	#888888
+	#	urgent_workspace   $bg		$bg 	#ff0000
+	#}
 }
 
 bindsym $mod+c				exec --no-startup-id clipmenu -i

@@ -22,15 +22,8 @@ installFontPkg() { # Installs needed packages
 		noto-fonts-cjk ttf-symbola ttf-roboto ttf-dejavu \
 		>/dev/null 2>&1
 
-	# getNerdFont "3270" || echo ">>Failed to install 3270"
-	# getNerdFont "AnonymousPro" || echo ">>Failed to install AnonymousPro"
-	# getNerdFont "Hack" || echo ">>Failed to install Hack"
-	getNerdFont "Meslo" || echo ">>Failed to install Hack"
-	# getNerdFont "FiraCode" ||  echo ">> Failed to install FiraCode"
-	# getNerdFont "SourceCodePro" || echo ">> Failed to install SourceCodePro"
-	# getNerdFont "Ubuntu" || echo ">> Failed to install Ubuntu"
-	# getNerdFont "UbuntuMono" || echo ">> Failed to install UbuntuMono"
-	# getNerdFont "Terminus" || echo ">> Failed to install Terminus"
+	getNerdFont "Overpass" || echo ">> Failed to install Overpass"
+	# getNerdFont "<++>" || echo ">> Failed to install <++>"
 }
 
 deleteNerdFonts() {
