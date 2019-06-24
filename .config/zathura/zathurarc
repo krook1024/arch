@@ -27,7 +27,7 @@ set default-fg "#FFFFFF"
 set statusbar-bg "#BD93F9"
 set statusbar-fg "#282A36"
 
-# Recolor documents to Dracula colorscheme
+# Recolor documents
 set recolor 1
-set recolor-lightcolor "#282A36"
-set recolor-darkcolor "#F8F8F2"
+set recolor-darkcolor "#ebdbb2"
+set recolor-lightcolor "#282828"
