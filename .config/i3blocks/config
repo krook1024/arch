@@ -9,8 +9,8 @@ interval=10
 #interval=3600
 #signal=5
 
-[memory]
-interval=5
+#[memory]
+#interval=5
 
 # [cpu]
 # interval=15
@@ -19,9 +19,9 @@ interval=5
 interval=once
 signal=10
 
-[disk]
-interval=60
-command=disk /
+#[disk]
+#interval=60
+#command=disk /
 
 [battery]
 command=battery BAT0
