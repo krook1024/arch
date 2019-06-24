@@ -22,16 +22,14 @@ installFontPkg() { # Installs needed packages
 		noto-fonts-cjk ttf-symbola ttf-roboto ttf-dejavu \
 		>/dev/null 2>&1
 
-	getNerdFont "Overpass" || echo ">> Failed to install Overpass"
+	getNerdFont "Hack" || echo ">> Failed to install Hack"
 	# getNerdFont "<++>" || echo ">> Failed to install <++>"
 }
 
 deleteNerdFonts() {
 	echo "> Deleting all Nerd Fonts..."
-	sudo rm -rf -- /usr/share/fonts/TTF/*Nerd\ Font*.ttf
-	sudo rm -rf -- /usr/share/fonts/TTF/Sauce\ Code Pro*.ttf
-	sudo rm -rf -- /usr/share/fonts/TTF/FuraCode*.ttf
-	sudo rm -rf -- /usr/share/fonts/TTF/Meslo*.otf
+	sudo rm -rf -- /usr/share/fonts/TTF/NerdF/*.ttf
+	sudo rm -rf -- /usr/share/fonts/OTF/NerdF/*.otf
 }
 
 getNerdFont() { # Downloads and installs a nerd font given a name
@@ -50,14 +48,16 @@ getNerdFont() { # Downloads and installs a nerd font given a name
 	unzip -d . "tmp.zip" >/dev/null 2>&1
 	rm -f -- *Compatible.ttf
 	rm -f -- *Compatible.otf
-	rm -f -- *Mono.ttf
-	rm -f -- *Mono.otf
+	# rm -f -- *Mono.ttf
+	# rm -f -- *Mono.otf
 	rm -f -- *.zip
 	echo "> Installing these font files for $name:"
-	ls -- *.ttf
-	ls -- *.otf
-	sudo mv -f ./*.ttf /usr/share/fonts/TTF/
-	sudo mv -f ./*.otf /usr/share/fonts/OTF/
+	ls -- *.ttf 2>/dev/null
+	ls -- *.otf 2>/dev/null
+	sudo mkdir -p /usr/share/fonts/TTF/NerdF/
+	sudo mkdir -p /usr/share/fonts/OTF/NerdF/
+	sudo mv -f ./*.ttf /usr/share/fonts/TTF/NerdF/ 2>/dev/null
+	sudo mv -f ./*.otf /usr/share/fonts/OTF/NerdF/ 2>/dev/null
 	(:;:)
 	echo "> Done! Cleaning up now..."
 	rm -rf "$dir"
@@ -69,7 +69,7 @@ installNewConfig() { # Symlinks configuration files to /etc/fonts/conf.d
 		10-scale-bitmap-fonts.conf 10-sub-pixel-rgb.conf \
 		11-lcdfilter-default.conf \
 		30-metric-aliases.conf \
-		50-user.conf 60-generic.conf \
+		50-user.conf \
 		57-dejavu-sans.conf 57-dejavu-serif.conf \
 		60-generic.conf \
 		# 66-noto-sans.conf 66-noto-serif.conf \
