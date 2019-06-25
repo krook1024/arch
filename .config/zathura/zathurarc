@@ -20,12 +20,12 @@ map + zoom in
 map - zoom out
 
 # Main background
-set default-bg "#ffffff"
-set default-fg "#282828"
+set default-bg "#282828"
+set default-fg "#ffffff"
 
 # Statusbar
-set statusbar-bg "#BD93F9"
-set statusbar-fg "#282A36"
+set statusbar-bg "#ebdbb2"
+set statusbar-fg "#282828"
 
 # Recolor documents
 set recolor 1
