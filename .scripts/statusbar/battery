@@ -32,4 +32,4 @@ fi
 # [ "$status" = "Charging" ] && color="#ffffff"
 
 
-printf "<span color='%s'>%s%s%s</span>" "$color" "$(echo "$status" | sed -e "s/,//;s/Discharging/$batteryicon/;s/Not Charging/$batteryicon/;s/Charging//;s/Unknown//;s/Full//;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+printf "<span color='%s'>%s%s%s</span>" "$color" "$(echo "$status" | sed -e "s/,//;s/Discharging/$batteryicon/;s/Not Charging/$batteryicon/;s/Charging//;s/Unknown//;s/Full//;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$//')"

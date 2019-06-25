@@ -26,6 +26,6 @@ else
 	icon=""
 fi
 
-printf "%s %s%%\\n" "$icon" "$vol" | tr -d '\n'
+printf "%s %s\\n" "$icon" "$vol" | tr -d '\n'
 printf "</span>"
 
