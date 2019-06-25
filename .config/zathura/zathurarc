@@ -20,8 +20,8 @@ map + zoom in
 map - zoom out
 
 # Main background
-set default-bg "#282A36"
-set default-fg "#FFFFFF"
+set default-bg "#ffffff"
+set default-fg "#282828"
 
 # Statusbar
 set statusbar-bg "#BD93F9"
