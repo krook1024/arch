@@ -27,6 +27,8 @@ copyfiles() {
 	# Ranger configuration
 	.config/ranger/rc.conf .config/ranger/rifle.conf \
 	.config/ranger/shortcuts.conf \
+	# Mpv
+	.config/mpv/mpv.conf .config/mpv/input \
 	# Unix ascii art
 	.scripts/unix)
 

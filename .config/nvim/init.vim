@@ -5,22 +5,19 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
-Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
 call plug#end()
 
-" Colorscheme-related
-"	let g:shades_of_purple_airline = 1
-"	let g:airline_theme='shades_of_purple'
-
 " Colorizer filetypes
     let g:colorizer_auto_filetype='scss,css,html,xdefaults'
 
 " Pandoc-vim settings
 	let g:pandoc#spell#enabled = 0
+	let g:pandoc#modules#disabled = ["folding"]
 
 " Basics
 	set mouse=a
