@@ -36,7 +36,8 @@ alias ka="killall" \
 	bt="bluetoothctl" \
 	nf='neofetch --disable gpu resolution icons theme  --ascii "$(fortune | cowsay -W 30 | lolcat)" | lolcat' \
 	pp='sudo powerpill' \
-	showfonts='fc-list -f "%{family}\n" | sort | uniq'
+	showfonts='fc-list -f "%{family}\n" | sort | uniq' \
+	yaay='yay -Syyuu --noconfirm'
 
 command -v nvim >/dev/null &&
 	alias vim="nvim" vimdiff="nvim -d"
