@@ -37,7 +37,7 @@ alias ka="killall" \
 	nf='neofetch --disable gpu resolution icons theme  --ascii "$(fortune | cowsay -W 30 | lolcat)" | lolcat' \
 	pp='sudo powerpill' \
 	showfonts='fc-list -f "%{family}\n" | sort | uniq' \
-	yaay='yay -Syyuu --noconfirm'
+	yaay='yay -Syyuu --noconfirm' \
 
 command -v nvim >/dev/null &&
 	alias vim="nvim" vimdiff="nvim -d"
@@ -49,3 +49,5 @@ sv() { vcopy "$(du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf)" ;}
 vf() { fzf | xargs -r -I % $EDITOR % ;}
 quickgit() { git add . ; git commit -m "$*" ; git push ;}
 printunicode() { printf "\u$1\n" ; }
+sorti() { sort -o $1 $1 ; }
+
