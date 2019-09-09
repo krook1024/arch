@@ -7,3 +7,4 @@ cfv	~/.config/nvim/init.vim
 cfr	~/.config/ranger/rc.conf
 cfi	~/.config/i3/config
 cfx ~/.Xresources
+cfs ~/.config/i3status/config
