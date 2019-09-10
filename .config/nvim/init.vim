@@ -238,6 +238,7 @@ call plug#end()
 	autocmd Filetype tex,rmd inoremap ,in \int{ dx}<++><Esc>7hi
 	autocmd Filetype tex,rmd inoremap ,te \text{}<++><Esc>4hi
 	autocmd Filetype tex,rmd inoremap ,fr \frac{}{<++>}<++><Esc>10hi
+	autocmd Filetype tex,rmd inoremap ,bin \binom{}{<++>}<++><Esc>10hi
 	autocmd Filetype tex,rmd inoremap ,ve \vert_{}<Esc>i
 	autocmd Filetype tex,rmd inoremap ,ra \rightarrow<Space>
 	autocmd Filetype tex,rmd inoremap ,cd \cdot<Space>
