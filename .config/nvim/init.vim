@@ -10,6 +10,7 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
+Plug 'othree/xml.vim'
 call plug#end()
 
 " Colorizer filetypes
