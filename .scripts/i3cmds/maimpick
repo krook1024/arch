@@ -8,6 +8,7 @@ a selected area with shadow (copy)
 
 current window
 current window (copy)
+current window with shadow
 current window with shadow (copy)
 
 full screen
@@ -17,9 +18,9 @@ full screen (copy)" | dmenu -l 13 -i -p "Screenshot which area?")" in
 	"a selected area (copy)") maim -s | xclip -selection clipboard -t image/png ;;
 	"a selected area with shadow") maim -s | convert - \( +clone -background black -shadow 80x10+0+0 \) +swap -background none -layers merge +repage pic-selected-"$(date '+%y%m%d-%H%M-%S').png" ;;
 	"a selected area with shadow (copy)") maim -s | convert - \( +clone -background black -shadow 80x10+0+0 \) +swap -background none -layers merge +repage png:- | xclip -selection clipboard -t image/png;;
-	"current window") maim -i "$(xdotool getactivewindow)" pic-window-"$(date '+%y%m%d-%H%M-%S').png" ;;
-	"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png ;;
-	"current window with shadow") maim -i "$(xdotool getactivewindow)" | convert - \( +clone -background black -shadow 80x10+0+0 \) +swap -background none -layers merge +repage pic-window-"$(date '+%y%m%d-%H%M-%S').png" ;;
+	"current window") maim -i "$(xdotool getactivewindow)" pic-window-"$(date '+%y%m%d-%H%M-%S').png";;
+	"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png;;
+	"current window with shadow") maim -i "$(xdotool getactivewindow)" | convert - \( +clone -background black -shadow 80x10+0+0 \) +swap -background none -layers merge +repage pic-window-"$(date '+%y%m%d-%H%M-%S').png";;
 	"current window with shadow (copy)") maim -i "$(xdotool getactivewindow)" | convert - \( +clone -background black -shadow 80x10+0+0 \) +swap -background none -layers merge +repage png:- | xclip -selection clipboard -t image/png;;
 	"full screen") (:;:) ; maim pic-full-"$(date '+%y%m%d-%H%M-%S').png" ;;
 	"full screen with shadow") (:;:) ; maim | convert - \( +clone -background black -shadow 80x10+0+0 \) +swap -background none -layers merge +repage pic-full-"$(date '+%y%m%d-%H%M-%S').png" ;;

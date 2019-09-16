@@ -106,7 +106,7 @@ call plug#end()
 	autocmd BufWritePre * call StripTrailingWhitespace()
 
 " delete blank lines in docbook
-	autocmd BufWritePre *.xml %g/^$/d
+"	autocmd BufWritePre *.xml %g/^$/d
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost ~/.config/bmdirs,~/.config/bmfiles !shortcuts
