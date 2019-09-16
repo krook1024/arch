@@ -11,6 +11,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
 Plug 'othree/xml.vim'
+Plug 'wlangstroth/vim-racket'
 call plug#end()
 
 " Colorizer filetypes
@@ -258,3 +259,19 @@ call plug#end()
 	autocmd FileType docbk inoremap ,cd <![CDATA[]]><Esc>2hi
 "	autocmd FileType docbk inoremap ,pl <programlisting language="<++>"><Enter><textobject><Enter><textdata fileref="<++>" /><Enter></textobject><Enter></programlisting>
 	autocmd FileType docbk inoremap ,pl <programlisting language="<++>"><xi:include href="<++>" parse="text" /></programlisting>
+
+" markdown live preview
+noremap <silent> <leader>om :call OpenMarkdownPreview()<cr>
+
+function! OpenMarkdownPreview() abort
+  if exists('s:markdown_job_id') && s:markdown_job_id > 0
+    call jobstop(s:markdown_job_id)
+    unlet s:markdown_job_id
+  endif
+  let s:markdown_job_id = jobstart(
+    \ 'grip ' . shellescape(expand('%:p')) . " 0 2>&1 | awk '/Running/ { printf $4 }'",
+    \ { 'on_stdout': 'OnGripStart', 'pty': 1 })
+  function! OnGripStart(_, output, __)
+    call system('open ' . a:output[0])
+  endfunction
+endfunction
