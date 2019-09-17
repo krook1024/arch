@@ -25,7 +25,7 @@ textype() {
 case "$file" in
 	*\.ms) refer -PS -e "$file" | groff -me -ms -kejpt -T pdf > "$base".pdf ;;
 	*\.mom) refer -PS -e "$file" | groff -mom -kejpt -T pdf > "$base".pdf ;;
-	*\.rmd) echo "require(rmarkdown); render('$file', output_format = 'all')" | R -q --vanilla ;;
+	*\.rmd) echo "require(rmarkdown); render('$file', output_format = 'all', clean = TRUE)" | R -q --vanilla ;;
 	*_site.yml) echo "require(rmarkdown); render_site()" | R -q --vanilla ;;
 	*.Rmd) echo "require(rmarkdown); render_site()" | R -q --vanilla ;;
 	*\.tex) textype "$file" ;;

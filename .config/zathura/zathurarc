@@ -20,7 +20,8 @@ map + zoom in
 map - zoom out
 
 # Main background
-set default-bg "#282828"
+# set default-bg "#282828"
+set default-bg "#000000"
 set default-fg "#ffffff"
 
 # Statusbar
@@ -30,7 +31,8 @@ set statusbar-fg "#282828"
 # Recolor documents
 set recolor 1
 set recolor-darkcolor "#ffffff"
-set recolor-lightcolor "#282828"
+#set recolor-lightcolor "#282828"
+set recolor-lightcolor "#000000"
 
 set guioptions ""
 

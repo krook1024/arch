@@ -38,6 +38,7 @@ alias ka="killall" \
 	pp='sudo powerpill' \
 	showfonts='fc-list -f "%{family}\n" | sort | uniq' \
 	yaay='yay -Syyuu --noconfirm' \
+	pushuni='~/repos/Uni/push'
 
 command -v nvim >/dev/null &&
 	alias vim="nvim" vimdiff="nvim -d"

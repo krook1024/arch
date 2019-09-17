@@ -1,3 +1,7 @@
 !! Terminal settings
 st.alpha:		1.00
-st.font:		mono:pixelsize=12:antialias=true:autohint=true
+st.font:		mono:pixelsize=12:antialias=true:autohint=true:minspace=false
+
+
+st.foreground: white
+st.background: black

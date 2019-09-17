@@ -10,14 +10,17 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
-Plug 'othree/xml.vim'
 Plug 'wlangstroth/vim-racket'
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-syntax'
+Plug 'Shougo/neco-vim'
 Plug 'tpope/vim-dispatch'
+Plug 'othree/xml.vim'
 call plug#end()
+
 
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
