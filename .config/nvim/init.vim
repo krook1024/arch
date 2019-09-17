@@ -50,6 +50,8 @@ call plug#end()
 	set nohlsearch
 	set clipboard=unnamedplus
 	set termguicolors
+	set autoread
+	set expandtab
 
 " Some more basics
 	set nocompatible
