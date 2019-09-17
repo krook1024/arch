@@ -14,6 +14,7 @@ export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export JAVA_HOME="/usr/lib/jvm/java-12-openjdk"
+export JDK_HOME="/usr/lib/jvm/java-12-openjdk"
 
 # less/man colors
 export LESS=-R
