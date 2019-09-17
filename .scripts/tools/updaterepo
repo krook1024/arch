@@ -59,7 +59,7 @@ copydirs() {
 gitupdate() {
 	cd "$REPODIR" && \
 	git add . && \
-	git commit -m "Update to dotfiles on $(date)" && \
+	git commit -m "⬆ Update to dotfiles on 📅 $(date) 👉" && \
 	git push
 }
 
