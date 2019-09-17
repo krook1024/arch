@@ -17,6 +17,7 @@ Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
+Plug 'jhradilek/vim-snippets', { 'as': 'DocbookSnippets' }
 Plug 'tpope/vim-dispatch'
 Plug 'othree/xml.vim'
 call plug#end()
