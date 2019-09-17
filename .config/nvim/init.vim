@@ -16,6 +16,7 @@ Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim'
+Plug 'tpope/vim-dispatch'
 call plug#end()
 
 " Deoplete
@@ -89,7 +90,7 @@ call plug#end()
 	nnoremap S :%s//g<Left><Left>
 
 " Compile document
-	map <leader>c :w! \| !compiler <c-r>%<CR>
+	map <leader>c :w! \| Dispatch! compiler <c-r>%<CR>
 
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
