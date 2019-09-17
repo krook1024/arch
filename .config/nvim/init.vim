@@ -12,7 +12,26 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'chrisbra/Colorizer'
 Plug 'othree/xml.vim'
 Plug 'wlangstroth/vim-racket'
+Plug 'lervag/vimtex'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim'
 call plug#end()
+
+" Deoplete
+	let g:deoplete#enable_at_startup = 1
+
+" Ultisnips
+	let g:UltiSnipsExpandTrigger = '<tab>'
+	let g:UltiSnipsJumpForwardTrigger = '<tab>'
+	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" Vimtex
+	let g:tex_flavor='latex'
+	let g:vimtex_view_method='zathura'
+	let g:vimtex_quickfix_mode=0
+	let g:conceallevel=1
+	let g:tex_conceal='abdmg'
 
 " Colorizer filetypes
     let g:colorizer_auto_filetype='scss,css,html,xdefaults'
@@ -234,19 +253,19 @@ call plug#end()
 	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
 
 " RMD - matek
-	autocmd Filetype tex,rmd inoremap ,mat \begin{gather*}<Enter><Enter>\end{gather*}<Esc>kA<Tab>
-	autocmd Filetype rmd inoremap ,def **Definíció.**<space>
-	autocmd Filetype rmd inoremap ,tet **Tétel.**<space>
-	autocmd Filetype rmd inoremap ,biz **Bizonyítás.**<space>
-	autocmd Filetype tex,rmd inoremap ,in \int{ dx}<++><Esc>7hi
-	autocmd Filetype tex,rmd inoremap ,te \text{}<++><Esc>4hi
-	autocmd Filetype tex,rmd inoremap ,fr \frac{}{<++>}<++><Esc>10hi
-	autocmd Filetype tex,rmd inoremap ,bin \binom{}{<++>}<++><Esc>10hi
-	autocmd Filetype tex,rmd inoremap ,ve \vert_{}<Esc>i
-	autocmd Filetype tex,rmd inoremap ,ra \rightarrow<Space>
-	autocmd Filetype tex,rmd inoremap ,cd \cdot<Space>
-	autocmd Filetype tex,rmd inoremap ,ta \begin{table}[H]<Enter>\centering<Enter>\caption{<++>}<Enter>\begin{tabular}{<++>}<Enter>\hline<Enter><++><Enter>\end{tabular}<Enter>\end{table}<Enter><Esc>,,
-
+"	autocmd Filetype tex,rmd inoremap ,mat \begin{gather*}<Enter><Enter>\end{gather*}<Esc>kA<Tab>
+"	autocmd Filetype rmd inoremap ,def **Definíció.**<space>
+"	autocmd Filetype rmd inoremap ,tet **Tétel.**<space>
+"	autocmd Filetype rmd inoremap ,biz **Bizonyítás.**<space>
+"	autocmd Filetype tex,rmd inoremap ,in \int{ dx}<++><Esc>7hi
+"	autocmd Filetype tex,rmd inoremap ,te \text{}<++><Esc>4hi
+"	autocmd Filetype tex,rmd inoremap ,fr \frac{}{<++>}<++><Esc>10hi
+"	autocmd Filetype tex,rmd inoremap ,bin \binom{}{<++>}<++><Esc>10hi
+"	autocmd Filetype tex,rmd inoremap ,ve \vert_{}<Esc>i
+"	autocmd Filetype tex,rmd inoremap ,ra \rightarrow<Space>
+"	autocmd Filetype tex,rmd inoremap ,cd \cdot<Space>
+"	autocmd Filetype tex,rmd inoremap ,ta \begin{table}[H]<Enter>\centering<Enter>\caption{<++>}<Enter>\begin{tabular}{<++>}<Enter>\hline<Enter><++><Enter>\end{tabular}<Enter>\end{table}<Enter><Esc>,,
+"
 """.xml
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
 	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"

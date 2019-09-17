@@ -31,3 +31,6 @@ set statusbar-fg "#282828"
 set recolor 1
 set recolor-darkcolor "#ebdbb2"
 set recolor-lightcolor "#282828"
+
+set guioptions ""
+
