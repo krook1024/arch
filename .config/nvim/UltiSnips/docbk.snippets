@@ -1,6 +1,8 @@
 snippet plisting "Programlisting from a file"
 <programlisting language="$1">
-	<xi:include href="./files/$2" />
+	<textobject>
+		<textdata fileref="./files/$2" />
+	</textobject>
 </programlisting>
 $0
 endsnippet
