@@ -91,7 +91,18 @@ call plug#end()
 
 " Compile document
 	map <leader>c :w! \| Dispatch! compiler <c-r>%<CR>
-	map <leader>v :Copen<CR>
+	map <leader>v :call CToggle()<cr><cr>
+
+	let g:quickfix_is_open = 0
+	function CToggle()
+		if g:quickfix_is_open
+			ccl
+			let g:quickfix_is_open = 0
+		else
+			Copen
+			let g:quickfix_is_open = 1
+		endif
+	endfunction
 
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
