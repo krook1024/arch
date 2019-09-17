@@ -91,6 +91,7 @@ call plug#end()
 
 " Compile document
 	map <leader>c :w! \| Dispatch! compiler <c-r>%<CR>
+	map <leader>v :Copen<CR>
 
 " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
