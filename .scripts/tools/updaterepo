@@ -40,7 +40,7 @@ copyfiles() {
 copydirs() {
 	cd ~ || return
 
-	directories=(.scripts/i3cmds .scripts/statusbar .scripts/tools \
+	directories=(.scripts/i3cmds .scripts/statusbar .scripts/tools .scripts/university \
 	.config/dunst \
 	.config/i3 \
 	.config/i3blocks \

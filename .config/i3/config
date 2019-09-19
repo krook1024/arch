@@ -68,14 +68,17 @@ bar {
 
         #                   border      bg          text
         focused_workspace   $background $background $foreground
-        active_workspace    $background $background $color10
-        inactive_workspace  $background $background $color10
+        inactive_workspace  $background $background $color12
+        active_workspace    $background $background $color7
         urgent_workspace    $color9     $color9     $color7
     }
 
 }
 
-bindsym $mod+c				exec --no-startup-id clipmenu -i
+# University bindings
+bindsym $mod+c              exec --no-startup-id rofi-courses.py
+bindsym $mod+v              exec --no-startup-id rofi-lectures.py
+
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 bindsym $mod+Shift+space 	floating toggle
@@ -83,7 +86,7 @@ bindsym $mod+space			focus mode_toggle
 bindsym $mod+Escape			workspace prev
 bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
 bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Reboot computer?" "$reboot"
-bindsym $mod+0		exec --no-startup-id dmenuunicode
+bindsym $mod+0	    	exec --no-startup-id dmenuunicode
 bindsym $mod+Insert		exec --no-startup-id showclip
 bindsym $mod+Pause		exec --no-startup-id xcqr
 
@@ -106,8 +109,7 @@ bindsym $mod+Shift+o	exec --no-startup-id i3resize right
 bindsym $mod+p			exec --no-startup-id dmenuincognito
 bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 bindsym $mod+Shift+a	exec $term -e pulsemixer
-bindsym $mod+d			exec --no-startup-id dmenu_run
-bindsym $mod			exec --no-startup-id dmenu_run
+bindsym $mod+d			exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d	gaps inner current set 0; gaps outer current set 0
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+g	exec --no-startup-id gimp; workspace $ws5
@@ -121,7 +123,6 @@ bindsym $mod+l			focus right
 bindsym $mod+Shift+l	move right 30
 bindsym $mod+x			exec --no-startup-id i3lock -e -f -c 1d2021
 bindsym $mod+Shift+x	exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
-bindsym $mod+v			exec --no-startup-id $term -e $EDITOR -c "VimwikiIndex"
 bindsym $mod+b			bar mode toggle
 bindsym $mod+n			exec $term -e newsboat && pkill -RTMIN+6 i3blocks
 bindsym $mod+Shift+n	floating toggle; sticky toggle; exec --no-startup-id bottomright
