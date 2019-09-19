@@ -4,6 +4,7 @@
 # I have vim run this file whenever I exit a .tex file.
 
 case "$1" in
+    *.rmd)
 	*.tex)
 	file=$(readlink -f "$1")
 	dir=$(dirname "$file")

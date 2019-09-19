@@ -114,12 +114,11 @@ call plug#end()
 	map <leader>p :!opout <c-r>%<CR><CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	autocmd VimLeave *.tex !texclear %
+	autocmd VimLeave *.tex,*.rmd !texclear %
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
@@ -154,9 +153,6 @@ call plug#end()
 
 " Recompile suckless tools
 	autocmd BufWritePost config.h,config.mk !sudo make install
-
-" Recompile docbook documents
-"	autocmd BufWritePost *.xml,*.xsl !make
 
 " Navigating with guides
 	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
@@ -255,21 +251,21 @@ call plug#end()
 	autocmd FileType bib inoremap ,c @incollection{<Enter>author<Space>=<Space>{<++>},<Enter>title<Space>=<Space>{<++>},<Enter>booktitle<Space>=<Space>{<++>},<Enter>editor<Space>=<Space>{<++>},<Enter>year<Space>=<Space>{<++>},<Enter>publisher<Space>=<Space>{<++>},<Enter>}<Enter><++><Esc>8kA,<Esc>i
 
 "MARKDOWN
-	autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
-	autocmd Filetype markdown,rmd inoremap ,n ---<Enter><Enter>
-	autocmd Filetype markdown,rmd inoremap ,b ****<++><Esc>F*hi
-	autocmd Filetype markdown,rmd inoremap ,s ~~~~<++><Esc>F~hi
-	autocmd Filetype markdown,rmd inoremap ,e **<++><Esc>F*i
-	autocmd Filetype markdown,rmd inoremap ,h ====<Space><++><Esc>F=hi
-	autocmd Filetype markdown,rmd inoremap ,i ![](<++>)<++><Esc>F[a
-	autocmd Filetype markdown,rmd inoremap ,a [](<++>)<++><Esc>F[a
-	autocmd Filetype markdown,rmd inoremap ,1 #<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap ,2 ##<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap ,3 ###<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap ,l --------<Enter>
-	autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
-	autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
-	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
+"	autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
+"	autocmd Filetype markdown,rmd inoremap ,n ---<Enter><Enter>
+"	autocmd Filetype markdown,rmd inoremap ,b ****<++><Esc>F*hi
+"	autocmd Filetype markdown,rmd inoremap ,s ~~~~<++><Esc>F~hi
+"	autocmd Filetype markdown,rmd inoremap ,e **<++><Esc>F*i
+"	autocmd Filetype markdown,rmd inoremap ,h ====<Space><++><Esc>F=hi
+"	autocmd Filetype markdown,rmd inoremap ,i ![](<++>)<++><Esc>F[a
+"	autocmd Filetype markdown,rmd inoremap ,a [](<++>)<++><Esc>F[a
+"	autocmd Filetype markdown,rmd inoremap ,1 #<Space><Enter><++><Esc>kA
+"	autocmd Filetype markdown,rmd inoremap ,2 ##<Space><Enter><++><Esc>kA
+"	autocmd Filetype markdown,rmd inoremap ,3 ###<Space><Enter><++><Esc>kA
+"	autocmd Filetype markdown,rmd inoremap ,l --------<Enter>
+"	autocmd Filetype rmd inoremap ,r ```{r}<CR>```<CR><CR><esc>2kO
+"	autocmd Filetype rmd inoremap ,p ```{python}<CR>```<CR><CR><esc>2kO
+"	autocmd Filetype rmd inoremap ,c ```<cr>```<cr><cr><esc>2kO
 
 " RMD - matek
 "	autocmd Filetype tex,rmd inoremap ,mat \begin{gather*}<Enter><Enter>\end{gather*}<Esc>kA<Tab>

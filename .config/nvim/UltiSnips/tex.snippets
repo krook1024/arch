@@ -21,11 +21,14 @@ snippet template "Basic template" b
 \documentclass[a4paper]{article}
 
 \usepackage[utf8]{inputenc}
+\usepackage[magyar]{babel}
 \usepackage[T1]{fontenc}
+\usepackage[a4paper, margin=2cm]{geometry}
 \usepackage{textcomp}
-\usepackage[dutch]{babel}
+\usepackage{forest}
+\usepackage[magyar]{babel}
 \usepackage{amsmath, amssymb}
-
+\usepackage{forest}
 
 % figure support
 \usepackage{import}
@@ -39,6 +42,7 @@ snippet template "Basic template" b
 }
 
 \pdfsuppresswarningpagegroup=1
+\setlength{\parindent}{0em}
 
 \begin{document}
 	$0
@@ -167,7 +171,6 @@ snippet gviz "Graphviz"
 }\end{center}
 $0
 endsnippet
-
 
 context "math()"
 snippet // "Fraction" iA
