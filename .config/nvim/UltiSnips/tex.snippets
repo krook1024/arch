@@ -51,6 +51,7 @@ title: $1
 subtitle: $2
 date: `date '+%Y. %m. %d.'`
 output: pdf_document
+author: Molnár Antal Albert
 header-includes:
   - \usepackage{fleqn}
   - \usepackage[singlefile]{graphviz}
@@ -245,9 +246,9 @@ snip.rv = subprocess.check_output(['wolframscript', '-code', code])
 `
 endsnippet
 
-snippet == "equals" iA
-&= $1 \\\\
-endsnippet
+#snippet == "equals" iA
+#&= $1 \\\\
+#endsnippet
 
 snippet != "equals" iA
 \neq
@@ -593,7 +594,7 @@ snippet nnn "bigcap" iA
 endsnippet
 
 snippet OO "emptyset" iA
-\O
+\varnothing
 endsnippet
 
 snippet RR "real" iA
@@ -677,13 +678,41 @@ snippet letw "let omega" iA
 Let $\Omega \subset \C$ be open.
 endsnippet
 
-
 snippet HH "H" iA
 \mathbb{H}
 endsnippet
 
 snippet DD "D" iA
 \mathbb{D}
+endsnippet
+
+context "math()"
+snippet land "Logical and" iA
+\land $0
+endsnippet
+
+context "math()"
+snippet lor "Logical or" iA
+\lor $0
+endsnippet
+
+context "math()"
+snippet === "Equivalent" iA
+\equiv $0
+endsnippet
+
+context "math()"
+snippet !! "Logical not" iA
+\lnot $0
+endsnippet
+
+snippet fel "Feladat"
+**Feladat.** $0
+endsnippet
+
+priority 90000
+snippet impl "Implies"
+\supset $0
 endsnippet
 
 # vim:ft=snippets
