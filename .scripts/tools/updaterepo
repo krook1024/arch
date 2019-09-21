@@ -50,7 +50,8 @@ copydirs() {
 	.vim \
 	.config/gtk-2.0 \
 	.config/gtk-3.0 \
-	.config/sxiv)
+	.config/sxiv \
+    .config/kitty)
 	for dir in "${directories[@]}"; do
 		cp -P -r --parents "$dir" "$REPODIR"
 	done
