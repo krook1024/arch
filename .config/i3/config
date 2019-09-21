@@ -9,6 +9,7 @@ gaps inner $gapsinner
 gaps outer $gapsouter
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
+set $mod2 Mod1
 set $stoprec --no-startup-id dmenurecord kill
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
@@ -55,7 +56,7 @@ set_from_resource $color14      color14 #000000
 set_from_resource $color15      color15 #000000
 
 bar {
-	font pango:mono 8
+	font pango:mono 10
 	status_command i3status
 	position top
 	mode dock
@@ -76,9 +77,9 @@ bar {
 }
 
 # University bindings
-bindsym $mod+c              exec --no-startup-id rofi-courses.py
-bindsym $mod+v              exec --no-startup-id rofi-lectures.py
-bindsym $mod+Shift+v        exec --no-startup-id rofi-lectures-view.py
+bindsym $mod2+c              exec --no-startup-id rofi-courses.py
+bindsym $mod2+v              exec --no-startup-id rofi-lectures.py
+bindsym $mod2+l              exec --no-startup-id rofi-lectures-view.py
 
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir

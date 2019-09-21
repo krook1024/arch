@@ -234,21 +234,6 @@ snip.rv = eval('latex(' + match.group(1).replace('\\', '').replace('^', '**').re
 `
 endsnippet
 
-priority 1000
-snippet math "mathematicablock" w
-math $1 math$0
-endsnippet
-
-priority 10000
-snippet 'math(.*)math' "math" wr
-`!p
-import subprocess
-code = match.group(1)
-code = 'ToString[' + code + ', TeXForm]'
-snip.rv = subprocess.check_output(['wolframscript', '-code', code])
-`
-endsnippet
-
 #snippet == "equals" iA
 #&= $1 \\\\
 #endsnippet
@@ -682,11 +667,11 @@ Let $\Omega \subset \C$ be open.
 endsnippet
 
 snippet HH "H" iA
-\mathbb{H}
+\H
 endsnippet
 
 snippet DD "D" iA
-\mathbb{D}
+\D
 endsnippet
 
 context "math()"
@@ -707,10 +692,6 @@ endsnippet
 context "math()"
 snippet !! "Logical not" iA
 \lnot $0
-endsnippet
-
-snippet fel "Feladat"
-**Feladat.** $0
 endsnippet
 
 priority 90000

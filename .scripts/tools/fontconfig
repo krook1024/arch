@@ -24,6 +24,7 @@ installFontPkg() { # Installs needed packages
 
 	getNerdFont "Hack" || echo ">> Failed to install Hack"
     getNerdFont "FiraCode" || echo ">> Failed to install Fira Code"
+    getNerdFont "Iosevka" || echo ">> Failed to install Iosevka"
 	# getNerdFont "<++>" || echo ">> Failed to install <++>"
 }
 
