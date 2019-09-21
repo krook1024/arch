@@ -1,6 +1,6 @@
 !! Terminal settings
 st.alpha:		1.00
-st.font:		mono:pixelsize=12:antialias=true:autohint=true:minspace=false
+st.font:		mono:pixelsize=14:antialias=true:autohint=true:minspace=false
 
 
 ! Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>

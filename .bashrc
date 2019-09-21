@@ -1,7 +1,7 @@
 #!/bin/bash
 HISTSIZE= HISTFILESIZE= # Infinite history.
 export HISTCONTROL=ignoredups
-export PS1="\[\e[33m\]\W\[\e[m\] \[\e[32m\]➜\[\e[m\] "
+export PS1="\[\e[313m\]\W\[\e[m\] \[\e[32m\]➜\[\e[m\] "
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc" # Load shortcut aliases
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 # added by travis gem

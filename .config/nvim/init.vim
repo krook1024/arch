@@ -20,7 +20,11 @@ Plug 'Shougo/neco-vim'
 Plug 'jhradilek/vim-snippets', { 'as': 'DocbookSnippets' }
 Plug 'tpope/vim-dispatch'
 Plug 'othree/xml.vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
+
+" Nord
+    colorscheme nord
 
 
 " Deoplete

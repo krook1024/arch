@@ -141,7 +141,7 @@ class Lectures(list):
 
     def compile_master(self):
         subprocess.Popen(
-            ['latexmk', '-g', '-f', str(self.master_file)],
+            ['latexmk', '-pdf', '-g', '-f', str(self.master_file)],
             cwd=str(self.root),
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL

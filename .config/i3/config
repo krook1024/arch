@@ -78,6 +78,7 @@ bar {
 # University bindings
 bindsym $mod+c              exec --no-startup-id rofi-courses.py
 bindsym $mod+v              exec --no-startup-id rofi-lectures.py
+bindsym $mod+Shift+v        exec --no-startup-id rofi-lectures-view.py
 
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
