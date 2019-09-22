@@ -12,6 +12,6 @@ cf	~/.config
 sc	~/.scripts
 sp	~/.startpage
 # University related
-u	~/repos/Uni
+u	~/repos/Uni/bachelor-2/semester-1
 tb	~/repos/textbook
 tf	~/repos/textbook/files
