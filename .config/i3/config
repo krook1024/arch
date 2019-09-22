@@ -80,6 +80,7 @@ bar {
 bindsym $mod2+c exec --no-startup-id rofi-courses.py
 bindsym $mod2+v exec --no-startup-id rofi-lectures.py
 bindsym $mod2+l exec --no-startup-id rofi-lectures-view.py
+bindsym $mod2+t exec --no-startup-id rofi-presentations-view.py
 bindsym $mod2+p exec --no-startup-id $READER ~/current_course/master.pdf
 bindsym $mod2+w exec --no-startup-id $BROWSER "$(yq read ~/current_course/info.yaml url)"
 bindsym $mod2+m exec --no-startup-id kitty -e setsid nvim ~/current_course/master.tex &

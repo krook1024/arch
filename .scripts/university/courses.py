@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from pathlib import Path
 import yaml
+import glob
 
 from lectures import Lectures
 from config import ROOT, CURRENT_COURSE_ROOT, CURRENT_COURSE_SYMLINK, CURRENT_COURSE_WATCH_FILE
