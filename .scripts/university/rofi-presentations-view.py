@@ -7,6 +7,10 @@ from presentations import Presentations
 presentations = Presentations()
 
 lp = len(presentations)
+
+if lp <= 0:
+    exit()
+
 lines = lp if lp < 15 else 15
 options = [p.basename for p in presentations]
 
