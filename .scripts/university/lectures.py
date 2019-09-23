@@ -57,7 +57,12 @@ class Lecture():
 class Lectures(list):
     def __init__(self, course):
         self.course = course
-        self.root = course.path
+
+        try:
+            self.root = course.path
+        except:
+            self.root = course
+
         self.master_file = self.root / 'master.tex'
         list.__init__(self, self.read_files())
 
@@ -158,7 +163,6 @@ if __name__ == '__main__':
     import sys
     args = sys.argv
     command = args[1]
-
 
     lectures = Lectures(Path.cwd())
 
