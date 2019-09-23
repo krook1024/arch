@@ -23,9 +23,11 @@ Plug 'othree/xml.vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+" Add current course to runtimepath
+    set rtp+=~/current_course
+
 " Nord
     colorscheme nord
-
 
 " Deoplete
 	let g:deoplete#enable_at_startup = 1
@@ -34,6 +36,7 @@ call plug#end()
 	let g:UltiSnipsExpandTrigger = '<tab>'
 	let g:UltiSnipsJumpForwardTrigger = '<tab>'
 	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+    let g:UltiSnippetDirectories = ["UltiSnips"]
 
 " Vimtex
 	let g:tex_flavor='latex'

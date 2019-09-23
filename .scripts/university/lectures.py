@@ -152,7 +152,7 @@ class Lectures(list):
             stderr=subprocess.DEVNULL
         )
         subprocess.Popen(
-            ['latexmk', '-c', str(self.master_file)],
+            ['latexmk', '-c'],
             cwd=str(self.root),
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
