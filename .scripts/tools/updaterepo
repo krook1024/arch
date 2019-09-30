@@ -7,7 +7,9 @@ copyfiles() {
 
 	files=(\
 	# Bash related
-	.bashrc .bash_profile .zprofile .profile .inputrc \
+	.bashrc .bash_profile .profile .inputrc \
+    # Zsh related \
+    .zshrc .zprofile \
 	# Tmux
 	.tmux.conf \
 	# Vim related
