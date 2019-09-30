@@ -1,26 +1,46 @@
 let mapleader =","
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/goyo.vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'jreybert/vimagit'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-commentary'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'chrisbra/Colorizer'
-Plug 'wlangstroth/vim-racket'
-Plug 'lervag/vimtex'
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Basics
+Plug 'tpope/vim-dispatch'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
-Plug 'jhradilek/vim-snippets', { 'as': 'DocbookSnippets' }
-Plug 'tpope/vim-dispatch'
-Plug 'othree/xml.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'sirver/ultisnips'
+Plug 'tpope/vim-commentary'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'jreybert/vimagit'
+
+" Colorize colors in buffer
+Plug 'chrisbra/Colorizer'
+
+" Snippets
+Plug 'honza/vim-snippets'
+
+" TeX
+Plug 'lervag/vimtex'
+
+" RMD
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
+" Colorscheme
 Plug 'arcticicestudio/nord-vim'
+
+" Docbook, XML
+Plug 'othree/xml.vim'
+Plug 'jhradilek/vim-snippets', { 'as': 'DocbookSnippets' }
+
+" R lang
+Plug 'jalvesaq/Nvim-R'
+Plug 'gaalcaras/ncm-R'
+
+" Racket
+Plug 'wlangstroth/vim-racket'
 call plug#end()
 
 " Add current course to runtimepath
@@ -84,7 +104,7 @@ call plug#end()
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
-	set splitbelow splitright
+	set splitright splitbelow
 
 " Nerd tree
 	map <C-n> :NERDTreeToggle<CR>
