@@ -1,6 +1,14 @@
 #vim: ft=cfg
 # Zathura settings
+set sandbox none
+#
 set selection-clipboard clipboard
+
+# Stop at page boundaries
+set scroll-page-aware "true"
+set smooth-scroll "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
 
 set statusbar-h-padding 0
 set statusbar-v-padding 0
@@ -9,7 +17,6 @@ set statusbar-v-padding 0
 set page-padding 1
 
 # Keyboard mappings
-map d toggle_page_mode
 map r reload
 map R rotate
 map K zoom in
@@ -31,6 +38,11 @@ set statusbar-fg "#282828"
 set recolor 1
 set recolor-darkcolor "#D8DEE9"
 set recolor-lightcolor "#2E3440"
+set recolor-reverse-video "true"
 
 set guioptions ""
 
+set render-loading "false"
+set scroll-step 50
+
+unmap d
