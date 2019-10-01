@@ -3,17 +3,22 @@ let mapleader =","
 call plug#begin('~/.config/nvim/plugged')
 
 " Basics
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
-Plug 'junegunn/goyo.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'sirver/ultisnips'
-Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
+
+" JSON
+Plug 'elzr/vim-json'
+Plug 'Quramy/vison'
 
 " Colorize colors in buffer
 Plug 'chrisbra/Colorizer'
