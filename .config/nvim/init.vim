@@ -51,6 +51,9 @@ call plug#end()
 " Add current course to runtimepath
     set rtp+=~/current_course
 
+" Auto cd to $PWD
+    autocmd BufEnter * silent! lcd %:p:h
+
 " Nord
     colorscheme nord
 
@@ -95,7 +98,7 @@ call plug#end()
 	set number relativenumber
 	set shiftwidth=4
 	set tabstop=4
-	set cc=80
+	set cc=60
 	nnoremap <Space> @q
 	nnoremap c "_c
 
