@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
@@ -48,6 +49,18 @@ Plug 'gaalcaras/ncm-R'
 Plug 'wlangstroth/vim-racket'
 call plug#end()
 
+" Lightline settings
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+
 " Add current course to runtimepath
     set rtp+=~/current_course
 
@@ -88,6 +101,7 @@ call plug#end()
 	set termguicolors
 	set autoread
 	set expandtab
+    set noshowmode
 
 " Some more basics
 	set nocompatible
