@@ -13,8 +13,8 @@ order += "ethernet enp0s25"
 order += "disk /"
 order += "volume master"
 order += "battery 0"
- order += "memory"
- order += "load"
+order += "memory"
+order += "load"
 order += "tztime local"
 order += "read_file current_course"
 
@@ -27,7 +27,8 @@ volume master {
 }
 
 wireless wlp3s0 {
-    format_up = "<span font='monospace'> </span> %essid:%quality, %bitrate, %ip "
+    format_up = "<span font='monospace'></span> %essid:%quality <span font='monospace'> </span> %ip"
+    #format_up = "<span font='monospace'> </span> %essid:%quality, %bitrate, %ip "
     format_down = "<span font='monospace'> </span>"
 }
 
@@ -37,7 +38,7 @@ ethernet enp0s25 {
 }
 
 battery 0 {
-    format = "%status %percentage %remaining"
+    format = "%status%percentage %remaining"
     format_down = "No battery"
     status_chr = "<span font='monospace'> </span>"
     status_bat = "<span font='monospace'> </span>"
@@ -63,12 +64,12 @@ path_exists VPN {
 }
 
 tztime local {
-    format = "<span font='monospace'> </span> %time"
+    format = "<span font='monospace'></span> %time"
     format_time = "%Y. %m. %d. %H:%M:%S"
 }
 
 load {
-    format = "<span font='monospace'> </span> %5min"
+    format = "<span font='monospace'></span> %5min"
 }
 
 cpu_temperature 0 {
@@ -77,17 +78,17 @@ cpu_temperature 0 {
 }
 
 memory {
-    format = "<span font='monospace'> </span> %used"
-    format_degraded = "<span font='monospace'> </span> %used"
+    format = "<span font='monospace'></span> %used"
+    format_degraded = "<span font='monospace'></span> %used"
     threshold_degraded = "10%"
 }
 
 disk "/" {
-    format = "<span font='monospace'> </span> %free"
+    format = "<span font='monospace'></span> %free"
 }
 
 read_file current_course {
-    format = "<span color='#EBCB8B'><span font='monospace'> </span> %content</span>"
+    format = "<span color='#EBCB8B'><span font='monospace'></span> %content</span>"
     path = "/home/b1/.config/current_course"
 }
 
