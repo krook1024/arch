@@ -1,0 +1,94 @@
+general {
+    output_format = "i3bar"
+    interval = 2
+    colors = true
+    color_good = "#A3BE8C"
+    color_degraded = "#EBCB8B"
+    color_bad = "#BF616A"
+    markup = pango
+}
+
+order += "wireless wlp3s0"
+order += "ethernet enp0s25"
+order += "disk /"
+order += "volume master"
+order += "battery 0"
+ order += "memory"
+ order += "load"
+order += "tztime local"
+order += "read_file current_course"
+
+volume master {
+    format = "<span font='monospace'> </span> %volume"
+    format_muted = "<span font='monospace'> </span>"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+wireless wlp3s0 {
+    format_up = "<span font='monospace'> </span> %essid:%quality, %bitrate, %ip "
+    format_down = "<span font='monospace'> </span>"
+}
+
+ethernet enp0s25 {
+    format_up = "<span font='monospace'> </span> %ip (%speed)"
+    format_down = "<span font='monospace'> </span>"
+}
+
+battery 0 {
+    format = "%status %percentage %remaining"
+    format_down = "No battery"
+    status_chr = "<span font='monospace'> </span>"
+    status_bat = "<span font='monospace'> </span>"
+    status_unk = "<span font='monospace'> </span>"
+    status_full = "<span font='monospace>  </span> full"
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 10
+    last_full_capacity = true
+}
+
+run_watch DHCP {
+    pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+    # file containing the PID of a vpnc process
+    pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+    # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+    path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+    format = "<span font='monospace'> </span> %time"
+    format_time = "%Y. %m. %d. %H:%M:%S"
+}
+
+load {
+    format = "<span font='monospace'> </span> %5min"
+}
+
+cpu_temperature 0 {
+    format = "T: %degrees °C"
+    path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+memory {
+    format = "<span font='monospace'> </span> %used"
+    format_degraded = "<span font='monospace'> </span> %used"
+    threshold_degraded = "10%"
+}
+
+disk "/" {
+    format = "<span font='monospace'> </span> %free"
+}
+
+read_file current_course {
+    format = "<span color='#EBCB8B'><span font='monospace'> </span> %content</span>"
+    path = "/home/b1/.config/current_course"
+}
+
+# vim: ft=config
