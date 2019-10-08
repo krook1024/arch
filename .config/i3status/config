@@ -1,6 +1,6 @@
 general {
     output_format = "i3bar"
-    interval = 2
+    interval = 1
     colors = true
     color_good = "#A3BE8C"
     color_degraded = "#EBCB8B"
@@ -10,11 +10,11 @@ general {
 
 order += "wireless wlp3s0"
 order += "ethernet enp0s25"
-order += "disk /"
+#order += "disk /"
 order += "volume master"
 order += "battery 0"
-order += "memory"
-order += "load"
+#order += "memory"
+#order += "load"
 order += "tztime local"
 order += "read_file current_course"
 
@@ -40,7 +40,7 @@ ethernet enp0s25 {
 battery 0 {
     format = "%status%percentage %remaining"
     format_down = "No battery"
-    status_chr = "<span font='monospace'> </span>"
+    status_chr = "<span font='monospace'>  </span>"
     status_bat = "<span font='monospace'> </span>"
     status_unk = "<span font='monospace'> </span>"
     status_full = "<span font='monospace>  </span> full"
@@ -65,7 +65,8 @@ path_exists VPN {
 
 tztime local {
     format = "<span font='monospace'></span> %time"
-    format_time = "%Y. %m. %d. %H:%M:%S"
+    #format_time = "%Y. %m. %d. %H:%M:%S"
+    format_time = "%Y. %m. %d. %H:%M"
 }
 
 load {
