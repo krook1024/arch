@@ -39,7 +39,8 @@ alias ka="killall" \
 	showfonts='fc-list -f "%{family}\n" | sort | uniq' \
 	yaay='yay -Syyuu --noconfirm' \
 	pushuni='~/repos/Uni/push' \
-    lmk='latexmk'
+    lmk='latexmk'\
+    pushit='git add --all && git commit -m "progress" && git push'
 
 command -v nvim >/dev/null &&
 	alias vim="nvim" vimdiff="nvim -d"

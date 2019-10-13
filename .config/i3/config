@@ -18,6 +18,7 @@ set $hibernate sudo -A systemctl suspend
 
 for_window [instance="Mandelb*"] floating enable
 for_window [title="Calculus"] floating enable
+for_window [title="Pasigraphy*"] floating enable
 for_window [instance="chromium"] border pixel 0
 for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
@@ -37,8 +38,9 @@ exec_always --no-startup-id dunst
 exec --no-startup-id remaps
 exec --no-startup-id unclutter
 
-set_from_resource $background   color0 #000000
-set_from_resource $foreground   color7 #000000
+set_from_resource $background   color7 #000000
+set_from_resource $foreground   color0 #000000
+
 set_from_resource $color1       color1 #000000
 set_from_resource $color2       color2 #000000
 set_from_resource $color3       color3 #000000
@@ -64,7 +66,8 @@ bar {
 
     colors {
         background  $background
-        separator   $color8
+        #separator   $color8
+        separator   $color7
         statusline  $foreground
 
         #                   border      bg          text
@@ -83,7 +86,8 @@ bindsym $mod2+l exec --no-startup-id rofi-lectures-view.py
 bindsym $mod2+t exec --no-startup-id rofi-presentations-view.py
 bindsym $mod2+h exec --no-startup-id rofi-help.py
 bindsym $mod2+p exec --no-startup-id $READER ~/current_course/master.pdf
-bindsym $mod2+w exec --no-startup-id $BROWSER "$(yq read ~/current_course/info.yaml url)"
+bindsym $mod2+w exec --no-startup-id $BROWSER "$(yq -r .url ~/current_course/info.yaml)"
+bindsym $mod2+s exec --no-startup-id $BROWSER "$(yq -r .syllabi ~/current_course/info.yaml)"
 bindsym $mod2+m exec --no-startup-id kitty -e setsid nvim ~/current_course/master.tex &
 
 # Classic bindings
