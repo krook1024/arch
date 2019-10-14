@@ -35,7 +35,7 @@ set statusbar-bg "#ebdbb2"
 set statusbar-fg "#282828"
 
 # Recolor documents
-set recolor 1
+set recolor 0
 set recolor-darkcolor "#D8DEE9"
 set recolor-lightcolor "#2E3440"
 set recolor-reverse-video "true"
