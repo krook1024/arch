@@ -7,6 +7,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
@@ -16,6 +17,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
+
+" Multiple cursors
+Plug 'terryma/vim-multiple-cursors'
 
 " JSON
 Plug 'elzr/vim-json'
@@ -126,7 +130,8 @@ let g:lightline = {
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Nerd tree
-	map <C-n> :NERDTreeToggle<CR>
+    let g:NERDTreeNodeDelimiter = "\u00a0"
+	map <C-m> :NERDTreeToggle <CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Shortcutting split navigation, saving a keypress:
@@ -330,6 +335,7 @@ let g:lightline = {
 """.xml
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
 	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
+    """au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
 """ docbook
 	autocmd FileType docbk inoremap ,a <link xlink:href="<++>"><++></link><++><Esc>F"ci"
