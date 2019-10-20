@@ -19,7 +19,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
 
 " Multiple cursors
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 
 " JSON
 Plug 'elzr/vim-json'
@@ -117,6 +117,7 @@ let g:lightline = {
 	set shiftwidth=4
 	set tabstop=4
 	set cc=80
+    set tw=80
 	nnoremap <Space> @q
 	nnoremap c "_c
 
@@ -130,8 +131,7 @@ let g:lightline = {
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Nerd tree
-    let g:NERDTreeNodeDelimiter = "\u00a0"
-	map <C-m> :NERDTreeToggle <CR>
+	map <C-n> :NERDTreeToggle <CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Shortcutting split navigation, saving a keypress:
