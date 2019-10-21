@@ -151,13 +151,6 @@ class Lectures(list):
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
         )
-        subprocess.Popen(
-            ['latexmk', '-c'],
-            cwd=str(self.root),
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL
-        )
-
 
 if __name__ == '__main__':
     import sys

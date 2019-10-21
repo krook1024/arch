@@ -38,8 +38,8 @@ exec_always --no-startup-id dunst
 exec --no-startup-id remaps
 exec --no-startup-id unclutter
 
-set_from_resource $background   color7 #000000
-set_from_resource $foreground   color0 #000000
+set_from_resource $background   color0 #000000
+set_from_resource $foreground   color7 #000000
 
 set_from_resource $color1       color1 #000000
 set_from_resource $color2       color2 #000000
@@ -66,8 +66,7 @@ bar {
 
     colors {
         background  $background
-        #separator   $color8
-        separator   $color7
+        separator   $background
         statusline  $foreground
 
         #                   border      bg          text
