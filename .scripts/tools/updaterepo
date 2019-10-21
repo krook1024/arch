@@ -50,6 +50,7 @@ copydirs() {
 	.config/zathura \
 	.config/nvim/UltiSnips \
 	.config/nvim/indent \
+    .config/nvim/ftplugin \
 	.vim \
 	.config/gtk-2.0 \
 	.config/gtk-3.0 \
