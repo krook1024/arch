@@ -1,4 +1,5 @@
 let mapleader =","
+set nocompatible
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -9,6 +10,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
 
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -53,125 +55,127 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 call plug#end()
 
 " Add current course to runtimepath
-    set rtp+=~/current_course
+set rtp+=~/current_course
 
 " Auto cd to $PWD
-    autocmd BufEnter * silent! lcd %:p:h
+autocmd BufEnter * silent! lcd %:p:h
 
 " Nord
-    colo pablo
+colo pablo
 
 " Deoplete
-	let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 " Ultisnips
-	let g:UltiSnipsExpandTrigger = '<tab>'
-	let g:UltiSnipsJumpForwardTrigger = '<tab>'
-	let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    let g:UltiSnippetDirectories = ["UltiSnips"]
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnippetDirectories = ["UltiSnips"]
 
 " Colorizer filetypes
-    let g:colorizer_auto_filetype='scss,css,html,xdefaults'
+let g:colorizer_auto_filetype='scss,css,html,xdefaults'
 
 " Pandoc-vim settings
-	let g:pandoc#spell#enabled = 0
-	let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#spell#enabled = 0
+let g:pandoc#modules#disabled = ["folding"]
 
 " Basics
-	set mouse=a go=a
-	set clipboard=unnamedplus
-	set termguicolors noshowmode nohls
+set mouse=a go=a
+set clipboard=unnamedplus
+set termguicolors noshowmode nohls incsearch smartcase
+set tags=./tags
+set ttyfast lazyredraw
+set cmdheight=2
 
-	set nocompatible
-	syntax on
-	set encoding=utf-8
-	set number relativenumber
+syntax on
+set encoding=utf-8
+set number relativenumber
 
 " Spacing and line breaks
-	set sw=4 ts=4 cc=80 tw=80 et
+set sw=4 ts=4 cc=80 tw=80 et
 
-	nnoremap <Space> @q
-	nnoremap c "_c
-	filetype plugin on
-	filetype plugin indent on
+nnoremap <Space> @q
+nnoremap c "_c
+filetype plugin on
+filetype plugin indent on
 
+" Extra settings
 " Enable autocompletion:
-    set wildmode=list:longest,full
+set wildmode=list:longest,full
 
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set linebreak<CR>
+map <leader>f :Goyo \| set linebreak<CR>
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_us<CR>
+map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Nerd tree
-	map <C-n> :NERDTreeToggle <CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle <CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Shortcutting split navigation, saving a keypress:
-	map <C-h> <C-w>h
-	map <C-j> <C-w>j
-	map <C-k> <C-w>k
-	map <C-l> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Check file in shellcheck:
-	map <leader>s :!clear && shellcheck %<CR>
+map <leader>s :!clear && shellcheck %<CR>
 
 " Replace all is aliased to S.
-	nnoremap S :%s//g<Left><Left>
+nnoremap S :%s//g<Left><Left>
 
 " Compile document
-	map <leader>c :w! \| Dispatch! compiler <c-r>%<CR>
-	map <leader>v :call CToggle()<cr><cr>
+map <leader>c :w! \| Dispatch! compiler <c-r>%<CR>
+map <leader>v :call CToggle()<cr><cr>
 
-	let g:quickfix_is_open = 0
-	function CToggle()
-		if g:quickfix_is_open
-			ccl
-			let g:quickfix_is_open = 0
-		else
-			Copen
-			let g:quickfix_is_open = 1
-		endif
-	endfunction
+let g:quickfix_is_open = 0
+function CToggle()
+  if g:quickfix_is_open
+    ccl
+    let g:quickfix_is_open = 0
+  else
+    Copen
+    let g:quickfix_is_open = 1
+  endif
+endfunction
 
 " Open corresponding .pdf/.html or preview
-	map <leader>p :!opout <c-r>%<CR><CR>
+map <leader>p :!opout <c-r>%<CR><CR>
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	autocmd VimLeave *.tex,*.rmd !texclear %
+autocmd VimLeave *.tex,*.rmd !texclear %
 
 " Ensure files are read as what I want:
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
-	autocmd BufRead,BufNewFile *.tex set filetype=tex
+autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+autocmd BufRead,BufNewFile *.tex set filetype=tex
 
 " Copy selected text to system clipboard (requires gvim/nvim/vim-x11 installed):
-	vnoremap <C-c> "+y
-	map <C-p> "+P
+vnoremap <C-c> "+y
+map <C-p> "+P
 
 " Automatically deletes all trailing whitespace on save.
-	fun! StripTrailingWhitespace()
-		" Don't strip on these filetypes
-		if &ft =~ 'md\|rmd\|vimwiki\|markdown\|rmarkdown'
-			return
-		endif
-		%s/\s\+$//e
-	endfun
-
-	autocmd BufWritePre * call StripTrailingWhitespace()
+fun! StripTrailingWhitespace()
+  " Don't strip on these filetypes
+  if &ft =~ 'md\|rmd\|vimwiki\|markdown\|rmarkdown'
+    return
+  endif
+  %s/\s\+$//e
+endfun
+autocmd BufWritePre * call StripTrailingWhitespace()
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
-	autocmd BufWritePost ~/.config/bmdirs,~/.config/bmfiles !shortcuts
+autocmd BufWritePost ~/.config/bmdirs,~/.config/bmfiles !shortcuts
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-	autocmd BufWritePost ~/.config/Xresources,~/.config/Xdefaults,~/.Xresources,~/.Xdefaults !xrdb %
+autocmd BufWritePost ~/.config/Xresources,~/.config/Xdefaults,~/.Xresources,~/.Xdefaults !xrdb %
 
 " Recompile suckless tools
-	autocmd BufWritePost config.h,config.mk !sudo make install
+autocmd BufWritePost config.h,config.mk !sudo make install
 
-" Navigating with guides
-	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-	vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-	map <leader><leader> <Esc>/<++><Enter>"_c4l
+" Section: Navigating with guides
+inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
+map <leader><leader> <Esc>/<++><Enter>"_c4l
+
+" vim:set et sw=2
