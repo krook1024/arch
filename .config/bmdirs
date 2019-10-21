@@ -13,6 +13,7 @@ sc	~/.scripts
 sp	~/.startpage
 # University related
 u	~/repos/Uni/bachelor-2/semester-1
+scu ~/.scripts/university
 tb	~/repos/textbook
 tf	~/repos/textbook/files
-usc ~/.scripts/university
+ccc ~/current_course
