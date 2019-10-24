@@ -101,6 +101,7 @@ snippet fig "Figure environment" b
 \end{figure}
 endsnippet
 
+priority -1
 snippet enum "Enumerate" bA
 \begin{enumerate}
 	\item $0
@@ -542,8 +543,9 @@ snippet set "set" wA
 \\{$1\\} $0
 endsnippet
 
-snippet || "mid" iA
- \mid
+context "math()"
+snippet || "lor" iA
+\lor
 endsnippet
 
 
@@ -676,6 +678,11 @@ endsnippet
 
 context "math()"
 snippet land "Logical and" iA
+\land $0
+endsnippet
+
+context "math()"
+snippet && "Logical and" iA
 \land $0
 endsnippet
 

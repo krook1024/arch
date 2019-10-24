@@ -60,8 +60,8 @@ set rtp+=~/current_course
 " Auto cd to $PWD
 autocmd BufEnter * silent! lcd %:p:h
 
-" Nord
 colo pablo
+"colo nord
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1

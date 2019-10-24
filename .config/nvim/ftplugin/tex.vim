@@ -4,6 +4,7 @@
 	let g:vimtex_quickfix_mode=0
 	let g:conceallevel=1
 	let g:tex_conceal='abdmg'
+    let leader=','
 
 """LATEX
 	" Word count:
