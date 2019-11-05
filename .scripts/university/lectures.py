@@ -8,7 +8,7 @@ import re
 import subprocess
 
 
-from config import get_week, DATE_FORMAT, CURRENT_COURSE_ROOT
+from config import get_week, DATE_FORMAT, CURRENT_COURSE_ROOT, TERMINAL_EMULATOR
 
 # TODO
 locale.setlocale(locale.LC_TIME, "en_US.utf8")
@@ -45,7 +45,7 @@ class Lecture():
 
     def edit(self):
         subprocess.Popen([
-            "kitty",
+            TERMINAL_EMULATOR,
             "-e", "bash", "-i", "-c",
             f"\\nvim {str(self.file_path)}"
         ])
