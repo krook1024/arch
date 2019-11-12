@@ -38,5 +38,6 @@ case "$file" in
 	*\.xml) make ;;
 	*\.m) setsid octave "$file" ;;
 	*\.java) java "$file" ;;
+    *\.dtd) xmllint --dtdvalid "$file" --noout "$basename".xml ;;
 	*) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
 esac

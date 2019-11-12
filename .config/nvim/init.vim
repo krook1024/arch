@@ -30,6 +30,10 @@ Plug 'chrisbra/Colorizer'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 
+" HTML
+Plug 'mattn/emmet-vim' ", {'for': 'html', 'css', 'xhtml'}
+Plug 'turbio/bracey.vim' ", {'for': 'html'}
+
 " XML
 Plug 'othree/xml.vim', {'for': 'xml'}
 Plug 'jhradilek/vim-snippets', { 'as': 'DocbookSnippets', 'for': 'xml'}
@@ -60,8 +64,8 @@ set rtp+=~/current_course
 " Auto cd to $PWD
 autocmd BufEnter * silent! lcd %:p:h
 
-colo pablo
-"colo nord
+"colo pablo
+colo nord
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1

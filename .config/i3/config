@@ -17,6 +17,7 @@ set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
 for_window [instance="Mandelb*"] floating enable
+for_window [title="Android Emulator*"] floating enable
 for_window [title="Calculus"] floating enable
 for_window [title="Pasigraphy*"] floating enable
 for_window [instance="chromium"] border pixel 0
