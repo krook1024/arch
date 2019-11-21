@@ -21,7 +21,7 @@ copyfiles() {
 	# Shortcut files
 	.config/bmdirs .config/bmfiles .config/aliasrc \
 	# Compton config
-	.config/pico.conf  \
+	.config/picom.conf  \
 	# Wallpaper
 	.config/wall.png  \
 	# Git configuration
