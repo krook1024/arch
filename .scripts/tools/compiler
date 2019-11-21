@@ -35,9 +35,11 @@ case "$file" in
 	*\.py) python "$file" ;;
 	*\.go) go run "$file" ;;
 	*\.sent) setsid sent "$file" 2>/dev/null & ;;
-	*\.xml) make ;;
+	tb-*\.xml) make ;;
 	*\.m) setsid octave "$file" ;;
 	*\.java) java "$file" ;;
-    *\.dtd) xmllint --dtdvalid "$file" --noout "$basename".xml ;;
+    *\.dtd) xmllint --dtdvalid "$file" --noout "$base".xml ;;
+    *\.xml) xmllint --dtdvalid "$base".dtd --noout "$file" ;;
+    *\.sass) sassc "$file" > "$base".css  ;;
 	*) sed 1q "$file" | grep "^#!/" | sed "s/^#!//" | xargs -r -I % "$file" ;;
 esac

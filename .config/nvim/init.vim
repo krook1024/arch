@@ -6,6 +6,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Basics
 Plug 'junegunn/goyo.vim'
 
+" Completion
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " tpope's essentials
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -33,6 +36,10 @@ Plug 'honza/vim-snippets'
 " HTML
 Plug 'mattn/emmet-vim' ", {'for': 'html', 'css', 'xhtml'}
 Plug 'turbio/bracey.vim' ", {'for': 'html'}
+
+" Sass
+Plug 'AtsushiM/search-parent.vim'
+Plug 'AtsushiM/sass-compile.vim'
 
 " XML
 Plug 'othree/xml.vim', {'for': 'xml'}
@@ -181,5 +188,23 @@ autocmd BufWritePost config.h,config.mk !sudo make install
 inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 map <leader><leader> <Esc>/<++><Enter>"_c4l
+
+" Sass
+let g:sass_compile_auto = 1
+let g:sass_compile_cdloop = 5
+let g:sass_compile_cssdir = ['css', 'stylesheet']
+let g:sass_compile_file = ['scss', 'sass']
+let g:sass_compile_beforecmd = ''
+let g:sass_compile_aftercmd = ''
+autocmd FileType less,sass  setlocal sw=2 sts=2 ts=2 et
+au! BufWritePost * SassCompile
+
+" Autocompletion settings
+set hidden
+set nobackup
+set nowritebackup
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
 " vim:set et sw=2
