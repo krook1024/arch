@@ -55,7 +55,8 @@ copydirs() {
 	.config/gtk-2.0 \
 	.config/gtk-3.0 \
 	.config/sxiv \
-    .config/kitty)
+    .config/kitty \
+    .config/rofi)
 	for dir in "${directories[@]}"; do
 		cp -P -r --parents "$dir" "$REPODIR"
 	done

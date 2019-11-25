@@ -1,0 +1,16 @@
+//----------------------
+// Configuration
+//----------------------
+
+configuration {
+	modi: "run,drun";
+	width: 50;
+    padding: 400;
+    eh: 2;
+	lines: 13;
+	font: "mono 9";
+	show-match: false;
+	separator-style: "solid";
+	hide-scrollbar: true;
+	theme: "~/.local/share/rofi/nord";
+}
