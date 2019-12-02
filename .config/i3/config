@@ -126,8 +126,8 @@ bindsym $mod+Shift+a	exec $term -e pulsemixer
 
 
 bindsym $mod+d			exec --no-startup-id rofi -show drun -theme $rofiTheme
-bindsym $mod+Shift+d    exec --no-startup-id rofi -show run -theme $rofiTheme
-#bindsym $mod+Shift+d	gaps inner current set 0; gaps outer current set 0
+#bindsym $mod+Shift+d    exec --no-startup-id rofi -show run -theme $rofiTheme
+bindsym $mod+Shift+d	gaps inner current set 0; gaps outer current set 0
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+Shift+g	exec --no-startup-id gimp; workspace $ws5
 bindsym $mod+h			focus left
